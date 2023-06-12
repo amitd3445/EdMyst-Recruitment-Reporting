@@ -1,0 +1,301 @@
+{
+    "Skills" : {
+        "Resilience" : {
+            "Positive" : {
+                "Summary" : "Maintains a positive attitude, perseverance, and a strong sense of determination in the face of obstacles or setbacks.",
+                "Details" : ["Manages stress, regulates one's emotions, and maintains a positive outlook", 
+                             "Adept at finding solutions and alternatives when faced with obstacles",
+                             "Is flexible and willing to modify one's approach when necessary"]
+            },
+            "Negative" : {
+                "Summary" : "Maintains a positive attitude, perseverance, and a strong sense of determination in the face of obstacles or setbacks.",
+                "Details" : ["Manages stress, regulates one's emotions, and maintains a positive outlook", 
+                             "Adept at finding solutions and alternatives when faced with obstacles",
+                             "Is flexible and willing to modify one's approach when necessary"]
+            }
+        },
+        "Self-Confidence" : {
+            "Positive" : {
+                "Summary" : "Expresses oneself confidently, which helps in establishing boundaries, articulating one's opinions, and effectively engaging in conversations and interactions.",
+                "Details" : ["Believes in one's abilities and fuels one's motivation to keep going", 
+                             "Having confidence in one's skills enhances focus, concentration, and overall performance, leading to greater achievements",
+                             "Belief in oneself and one's abilities creates a positive impact on those one interacts with, making one an effective leader and role model"]
+            },
+            "Negative" : {
+                "Summary" : "Maintains a positive attitude, perseverance, and a strong sense of determination in the face of obstacles or setbacks.",
+                "Details" : ["Manages stress, regulates one's emotions, and maintains a positive outlook", 
+                             "Adept at finding solutions and alternatives when faced with obstacles",
+                             "Is flexible and willing to modify one's approach when necessary"]
+            }
+        },
+        "Adaptability" : {
+            "Positive" : {
+                "Summary" : "Adjusts one's mindset, plans, and behaviors according to new circumstances or challenges.",
+                "Details" : ["Quickly adjusts one's work methods and approaches to align with new requirements, ensuring smooth transitions and minimal disruption", 
+                             "Enables one to stay up-to-date with industry trends, adopt new technologies, and continually improve their performance",
+                             "Adjusting one's communication styles and work methods makes one collaborate successfully with colleagues from various backgrounds"]
+            },
+            "Negative" : {
+                "Summary" : "Maintains a positive attitude, perseverance, and a strong sense of determination in the face of obstacles or setbacks.",
+                "Details" : ["Manages stress, regulates one's emotions, and maintains a positive outlook", 
+                             "Adept at finding solutions and alternatives when faced with obstacles",
+                             "Is flexible and willing to modify one's approach when necessary"]
+            }
+        },
+        "Learnability" : {
+            "Positive" : {
+                "Summary" : "Maintains a positive attitude, perseverance, and a strong sense of determination in the face of obstacles or setbacks.",
+                "Details" : ["Manages stress, regulates one's emotions, and maintains a positive outlook", 
+                             "Adept at finding solutions and alternatives when faced with obstacles",
+                             "Is flexible and willing to modify one's approach when necessary"]
+            },
+            "Negative" : {
+                "Summary" : "May find it difficult to embrace challenges, view failures as learning opportunities, and cultivate a positive attitude towards continuous learning and improvement.",
+                "Details" : ["Has limited self-awareness about one's learning preferences, and any specific skills or knowledge gaps that hinder one's ability to learn effectively", 
+                             "Prefers to be in one's comfort zone rather than actively seeking out diverse learning opportunities, both within and outside your workplace",
+                             "Struggles to define clear and specific learning goals that align with one's personal and professional aspirations"]
+            }
+        },
+        "Ownership And Accountability" : {
+            "Positive" : {
+                "Summary" : "Maintains a positive attitude, perseverance, and a strong sense of determination in the face of obstacles or setbacks.",
+                "Details" : ["Manages stress, regulates one's emotions, and maintains a positive outlook", 
+                             "Adept at finding solutions and alternatives when faced with obstacles",
+                             "Is flexible and willing to modify one's approach when necessary"]
+            },
+            "Negative" : {
+                "Summary" : "Has limited sense of responsibility and willingness to take ownership of their actions, decisions, and outcomes.",
+                "Details" : ["Rarely seeks clear understanding of what is expected of oneself and how one will be held accountable for one's work", 
+                             "Prefers doing only what has been told, rather than actively seeking opportunities to contribute, taking on additional responsibilities, and volunteering for projects or tasks",
+                             "When errors occur, hardly takes responsibility for them, analyzes the underlying factors, and develops strategies to prevent similar mistakes in the future"]
+            }
+        },
+        "Achievement Orientation" : {
+            "Positive" : {
+                "Summary" : "Maintains a positive attitude, perseverance, and a strong sense of determination in the face of obstacles or setbacks.",
+                "Details" : ["Manages stress, regulates one's emotions, and maintains a positive outlook", 
+                             "Adept at finding solutions and alternatives when faced with obstacles",
+                             "Is flexible and willing to modify one's approach when necessary"]
+            },
+            "Negative" : {
+                "Summary" : "Maintains a positive attitude, perseverance, and a strong sense of determination in the face of obstacles or setbacks.",
+                "Details" : ["Manages stress, regulates one's emotions, and maintains a positive outlook", 
+                             "Adept at finding solutions and alternatives when faced with obstacles",
+                             "Is flexible and willing to modify one's approach when necessary"]
+            }
+        },
+        "Energy, Passion, and Optimism" : {
+            "Positive" : {
+                "Summary" : "Maintains a positive attitude, perseverance, and a strong sense of determination in the face of obstacles or setbacks.",
+                "Details" : ["Manages stress, regulates one's emotions, and maintains a positive outlook", 
+                             "Adept at finding solutions and alternatives when faced with obstacles",
+                             "Is flexible and willing to modify one's approach when necessary"]
+            },
+            "Negative" : {
+                "Summary" : "Maintains a positive attitude, perseverance, and a strong sense of determination in the face of obstacles or setbacks.",
+                "Details" : ["Manages stress, regulates one's emotions, and maintains a positive outlook", 
+                             "Adept at finding solutions and alternatives when faced with obstacles",
+                             "Is flexible and willing to modify one's approach when necessary"]
+            }
+        },
+        "Dealing With Uncertainity" : {
+            "Positive" : {
+                "Summary" : "Maintains a positive attitude, perseverance, and a strong sense of determination in the face of obstacles or setbacks.",
+                "Details" : ["Manages stress, regulates one's emotions, and maintains a positive outlook", 
+                             "Adept at finding solutions and alternatives when faced with obstacles",
+                             "Is flexible and willing to modify one's approach when necessary"]
+            },
+            "Negative" : {
+                "Summary" : "Maintains a positive attitude, perseverance, and a strong sense of determination in the face of obstacles or setbacks.",
+                "Details" : ["Manages stress, regulates one's emotions, and maintains a positive outlook", 
+                             "Adept at finding solutions and alternatives when faced with obstacles",
+                             "Is flexible and willing to modify one's approach when necessary"]
+            }
+        }, 
+        "Grit And Persistence" : {
+            "Positive" : {
+                "Summary" : "Maintains a positive attitude, perseverance, and a strong sense of determination in the face of obstacles or setbacks.",
+                "Details" : ["Manages stress, regulates one's emotions, and maintains a positive outlook", 
+                             "Adept at finding solutions and alternatives when faced with obstacles",
+                             "Is flexible and willing to modify one's approach when necessary"]
+            },
+            "Negative" : {
+                "Summary" : "Maintains a positive attitude, perseverance, and a strong sense of determination in the face of obstacles or setbacks.",
+                "Details" : ["Manages stress, regulates one's emotions, and maintains a positive outlook", 
+                             "Adept at finding solutions and alternatives when faced with obstacles",
+                             "Is flexible and willing to modify one's approach when necessary"]
+            }
+        }
+    },
+    "Interview Questions" : {
+        "Resilience" : [
+            {
+                "Initial" : "Can you recall a time when you received feedback or criticism that was challenging to handle? How did you demonstrate resilience in accepting and responding to that feedback?",
+                "Details" : [
+                    "What was the nature of the feedback or criticism you received? Can you provide some specific details about the situation?", 
+                    "What steps did you take to manage your emotions and maintain a resilient mindset when faced with the challenging feedback or criticism?",
+                    "What was the ultimate outcome of your response to the challenging feedback or criticism? How did your resilience contribute to that outcome?"
+                ]
+            },
+            {
+                "Initial" : "Share an example of a situation where you had to step outside your comfort zone or take on a new role/responsibility. How did you demonstrate resilience in adapting to the change and learning new skills?",
+                "Details" : [
+                    "What specific factors or circumstances led to you stepping outside your comfort zone or taking on the new role/responsibility?", 
+                    "Did you seek any additional resources or support to help you navigate the unfamiliar territory? If so, how did that contribute to your resilience and adaptation?",
+                    "How did you maintain a positive and open mindset despite the challenges associated with stepping outside your comfort zone?",
+                    "What specific actions did you take to ensure a smooth transition and integration into the new role/responsibility?"
+                ]
+            }
+        ],
+        "Self-Confidence" : [
+            {
+                "Initial" : "Describe a time when you had to overcome self-doubt or a lack of confidence in order to accomplish a task or goal. How did you manage to build your confidence in that situation?",
+                "Details" : [
+                    "Can you provide specific details about the task or goal that you initially doubted your abilities to accomplish?", 
+                    "Can you share any specific strategies or techniques you employed to build your confidence in that situation?",
+                    "Can you describe any specific moments or turning points when you felt your confidence growing stronger?",
+                    "What was the ultimate outcome of your efforts to overcome self-doubt and accomplish the task or goal? How did your increased confidence contribute to that outcome?"
+                ]
+            },
+            {
+                "Initial" : "How do you handle situations where you receive feedback or criticism that challenges your self-confidence? Can you provide an example?",
+                "Details" : [
+                    "Can you describe any thoughts or doubts that went through your mind as a result of the feedback or criticism?", 
+                    "How do you typically process and reflect on feedback or criticism that challenges your self-confidence?",
+                    "Can you share any specific actions you took to address the feedback or criticism and rebuild your self-confidence?"
+                ]
+            }
+        ],
+        "Adaptability" : [
+            {
+                "Initial" : "Describe a time when a project or initiative you were working on experienced a major shift in direction or strategy. How did you adapt your approach and priorities to align with the new direction?",
+                "Details" : [
+                    "Can you provide specific details about the project or initiative and the circumstances that led to the major shift in direction or strategy?", 
+                    "What adjustments did you make to your approach or plans to align with the new direction? Can you provide specific examples of changes you implemented?",
+                    "Did you need to realign or reprioritize your tasks or objectives? How did you determine what needed to change and what to prioritize?",
+                    "How did you maintain focus and motivation amidst the changes and uncertainties? Can you share any strategies or techniques you employed to keep the team engaged and committed to the new direction?"
+                ]
+            },
+            {
+                "Initial" : "Can you recall a situation where you encountered resistance or pushback to a new idea or change you proposed? How did you adapt your communication and approach to gain buy-in and overcome the resistance?",
+                "Details" : [
+                    "How did you initially react or feel when you encountered the resistance or pushback? Were there any challenges to your own confidence or conviction in the idea or change?", 
+                    "Can you share specific strategies or techniques you employed to address the concerns and objections raised by others?",
+                    "Can you provide an example of how you leveraged influential stakeholders or advocates to help overcome the resistance and gain support for your idea or change?",
+                    "Can you describe the outcome of your efforts? Did you successfully gain support and implement the idea or change? If not, what valuable lessons did you learn from the experience?"
+                ]
+            }
+        ],
+        "Learnability" : [
+            {
+                "Initial" : "Describe a situation where you struggled to learn or acquire new skills or knowledge in a professional setting. What were the challenges you faced and how did you attempt to overcome them?",
+                "Details" : [
+                    "Can you explain the reasons or factors that contributed to your struggle in acquiring those skills or knowledge?", 
+                    "Did you seek any guidance or support from others to help you overcome the challenges? If so, what was their role and how did they assist you?",
+                    "Were there any moments of progress or small successes during your learning journey? If so, how did they impact your motivation and determination?",
+                    "How do you handle situations where you are required to learn something new that falls outside your comfort zone?"
+                ]
+            },
+            {
+                "Initial" : "Describe a situation where you felt overwhelmed or frustrated by the amount of information or the pace of learning required. How did you manage these feelings and continue to make progress?",
+                "Details" : [
+                    "Can you provide specific details about the situation where you felt overwhelmed or frustrated by the amount of information or pace of learning? What were the factors contributing to those feelings?", 
+                    "Can you share any instances where you sought clarification or additional resources to enhance your understanding of the information or learning material?",
+                    "How did you maintain motivation and commitment to the learning process despite feeling overwhelmed or frustrated? Did you set any specific goals or milestones to track your progress?",
+                    "Looking back, what valuable lessons did you learn from that experience? How have you applied those lessons in subsequent situations where you felt overwhelmed or faced a rapid pace of learning?"
+                ]
+            }
+        ],
+        "Ownership And Accountability" : [
+            {
+                "Initial" : "Describe a situation where you took ownership of a project or task and went above and beyond to ensure its successful completion. What specific actions did you take, and what was the outcome?",
+                "Details" : [
+                    "Can you describe any specific actions or initiatives you undertook to ensure the successful completion of the project or task? How did these actions demonstrate your ownership and commitment?", 
+                    "Can you provide examples of how you communicated progress, updates, or any potential risks to stakeholders or team members involved? How did you ensure transparency and alignment?",
+                    "What were the outcomes or results of your efforts? Can you quantify the impact of your ownership and going above and beyond in terms of achievements, stakeholder satisfaction, or any other relevant metrics?"
+                ]
+            },
+            {
+                "Initial" : "Can you share an example of a time when you made a mistake or encountered a setback in your work? How did you take accountability for the situation, and what steps did you take to rectify it?",
+                "Details" : [
+                    "How did you initially react or feel when you realized the mistake or encountered the setback? Did you immediately take ownership, or did it take some time for you to fully accept responsibility?", 
+                    "How did you approach rectifying the mistake or addressing the setback? What specific actions or measures did you take to resolve the issue?",
+                    "Did you reflect on the situation to identify the root causes or contributing factors? How did this reflection help you learn from the mistake and prevent similar situations in the future?",
+                    "Looking back, what valuable lessons did you learn from that experience? How have you applied those lessons in subsequent situations to improve your performance?"
+                ]
+            }
+        ],
+        "Achievement Orientation" : [
+            {
+                "Initial" : "Can you recall a time when you received feedback or criticism that was challenging to handle? How did you demonstrate resilience in accepting and responding to that feedback?",
+                "Details" : [
+                    "What was the nature of the feedback or criticism you received? Can you provide some specific details about the situation?", 
+                    "What steps did you take to manage your emotions and maintain a resilient mindset when faced with the challenging feedback or criticism?",
+                    "What was the ultimate outcome of your response to the challenging feedback or criticism? How did your resilience contribute to that outcome?"
+                ]
+            },
+            {
+                "Initial" : "Can you recall a time when you received feedback or criticism that was challenging to handle? How did you demonstrate resilience in accepting and responding to that feedback?",
+                "Details" : [
+                    "What was the nature of the feedback or criticism you received? Can you provide some specific details about the situation?", 
+                    "What steps did you take to manage your emotions and maintain a resilient mindset when faced with the challenging feedback or criticism?",
+                    "What was the ultimate outcome of your response to the challenging feedback or criticism? How did your resilience contribute to that outcome?"
+                ]
+            }
+        ],
+        "Energy, Passion, and Optimism" : [
+            {
+                "Initial" : "Can you recall a time when you received feedback or criticism that was challenging to handle? How did you demonstrate resilience in accepting and responding to that feedback?",
+                "Details" : [
+                    "What was the nature of the feedback or criticism you received? Can you provide some specific details about the situation?", 
+                    "What steps did you take to manage your emotions and maintain a resilient mindset when faced with the challenging feedback or criticism?",
+                    "What was the ultimate outcome of your response to the challenging feedback or criticism? How did your resilience contribute to that outcome?"
+                ]
+            },
+            {
+                "Initial" : "Can you recall a time when you received feedback or criticism that was challenging to handle? How did you demonstrate resilience in accepting and responding to that feedback?",
+                "Details" : [
+                    "What was the nature of the feedback or criticism you received? Can you provide some specific details about the situation?", 
+                    "What steps did you take to manage your emotions and maintain a resilient mindset when faced with the challenging feedback or criticism?",
+                    "What was the ultimate outcome of your response to the challenging feedback or criticism? How did your resilience contribute to that outcome?"
+                ]
+            }
+        ],
+        "Dealing With Uncertainity" : [
+            {
+                "Initial" : "Can you recall a time when you received feedback or criticism that was challenging to handle? How did you demonstrate resilience in accepting and responding to that feedback?",
+                "Details" : [
+                    "What was the nature of the feedback or criticism you received? Can you provide some specific details about the situation?", 
+                    "What steps did you take to manage your emotions and maintain a resilient mindset when faced with the challenging feedback or criticism?",
+                    "What was the ultimate outcome of your response to the challenging feedback or criticism? How did your resilience contribute to that outcome?"
+                ]
+            },
+            {
+                "Initial" : "Can you recall a time when you received feedback or criticism that was challenging to handle? How did you demonstrate resilience in accepting and responding to that feedback?",
+                "Details" : [
+                    "What was the nature of the feedback or criticism you received? Can you provide some specific details about the situation?", 
+                    "What steps did you take to manage your emotions and maintain a resilient mindset when faced with the challenging feedback or criticism?",
+                    "What was the ultimate outcome of your response to the challenging feedback or criticism? How did your resilience contribute to that outcome?"
+                ]
+            }
+        ],
+        "Grit And Persistence" : [
+            {
+                "Initial" : "Can you recall a time when you received feedback or criticism that was challenging to handle? How did you demonstrate resilience in accepting and responding to that feedback?",
+                "Details" : [
+                    "What was the nature of the feedback or criticism you received? Can you provide some specific details about the situation?", 
+                    "What steps did you take to manage your emotions and maintain a resilient mindset when faced with the challenging feedback or criticism?",
+                    "What was the ultimate outcome of your response to the challenging feedback or criticism? How did your resilience contribute to that outcome?"
+                ]
+            },
+            {
+                "Initial" : "Can you recall a time when you received feedback or criticism that was challenging to handle? How did you demonstrate resilience in accepting and responding to that feedback?",
+                "Details" : [
+                    "What was the nature of the feedback or criticism you received? Can you provide some specific details about the situation?", 
+                    "What steps did you take to manage your emotions and maintain a resilient mindset when faced with the challenging feedback or criticism?",
+                    "What was the ultimate outcome of your response to the challenging feedback or criticism? How did your resilience contribute to that outcome?"
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,159 @@
+@page {
+  size: Letter;
+
+  @bottom-left {
+    content: string(heading);
+    font-size: 9pt;
+    height: 1cm;
+    vertical-align: middle;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+    @bottom-right {
+    background: #14213d;
+    color: #ffffff;
+    content: counter(page);
+    height: 1cm;
+    text-align: center;
+    width: 1cm;
+}
+
+    @bottom-center {
+    background: #14213d;
+    content: '';
+    display: block;
+    height: 0.05cm;
+    opacity: 0.5;
+    width: 100%;
+}
+}
+
+@page :first {
+    background: url(./front_page.jpg) no-repeat center;
+    background-size: cover;
+    margin: 0;
+  }
+
+html {
+  color: #393939;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 11pt;
+  font-weight: 300;
+  line-height: 1.25;
+}
+
+html body h1,
+html body h2,
+html body h3,
+html body h4 {
+  margin: 0;
+}
+
+html body h1 {
+  color: #0d0c0c;
+  font-size: 16pt;
+  padding: 0;
+  margin: 0;
+  text-transform: uppercase;
+  border-bottom: solid 2px #cbd5e0;
+
+}
+
+html body h2 {
+  color: #090909;
+  font-size: 14pt;
+  padding: 0;
+  margin-bottom: 10px;
+  border-bottom: solid 2px #cbd5e0;
+}
+
+html body h3 {
+    color: #080909;
+    font-size: 12pt;
+    padding: 0;
+    margin: 0;
+  }
+
+html body article#cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  height: 297mm;
+}
+
+section {
+  margin-bottom: 2cm;
+}
+
+html body article#cover section {
+  text-align: right;
+}
+
+.image-interview-questions img {
+    display: block;
+    margin: auto;
+    margin-top: 5mm;
+    margin-bottom: 5mm;
+    width: 70%;
+}
+
+.image-score-ticker img {
+    display: block;
+    width: 100%;
+    margin: auto;
+}
+
+.top-header-skills{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.top-header-skills img {
+    height: 35mm;
+}
+
+.top-header-skills h4 {
+  font-size: 12pt;
+}
+
+.div-before-interview-container {
+    display: flex;
+}
+
+.div-before-interview {
+    flex: 1;
+    width: 20%;
+    padding: 3mm;
+}
+
+.div-before-interview h4 {
+    font-size: 14pt;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(72, 127, 228);
+}
+
+.div-before-interview p {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+
+#pic {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    height: auto;
+}
+
+#spider {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    height: auto;
+}
