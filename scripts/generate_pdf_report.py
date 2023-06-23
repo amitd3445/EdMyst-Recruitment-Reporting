@@ -14,7 +14,9 @@ import weasyprint
 from jinja2 import Environment, FileSystemLoader
 
 
-def generate_interview_report(payload: Dict[str, Dict[str, Union[float, int, str]]]) -> None:
+def generate_interview_report(
+    payload: Dict[str, Dict[str, Union[float, int, str]]]
+) -> None:
     """
     Generate the interviewer assessment report by parsing the payload
 
@@ -71,7 +73,11 @@ def _validate_payload(payload: Dict[str, Dict[str, Union[float, int, str]]]) -> 
 
             if isinstance(value, dict):
                 stack.append(value)
-            elif not (isinstance(value, float)  or isinstance(value, int) or isinstance(value, str)):
+            elif not (
+                isinstance(value, float)
+                or isinstance(value, int)
+                or isinstance(value, str)
+            ):
                 raise TypeError(
                     "Input must be nested dictionaries with values as either string, int, or float"
                 )
@@ -414,48 +420,18 @@ def _delete_temp_files() -> None:
     os.remove(path_html_file)
 
 
-if __name__ == '__main__':
-    payload =         {
-            "Candidate": {
-                "name": "John Doe",
-                "company": "COMPANY_NAME"
-            },
-            "Self-Confidence": {
-                "Self": 9,
-                "Comparison": 2
-            },
-            "Resilience": {
-                "Self": 8,
-                "Comparison": 6
-            },
-            "Achievement Orientation": {
-                "Self": 6.3,
-                "Comparison": 5.4
-            },
-            "Adaptability": {
-                "Self": 4,
-                "Comparison": 3.4
-            },
-            "Learnability": {
-                "Self": 3,
-                "Comparison": 4.2
-            },
-            "Ownership And Accountability": {
-                "Self": 9,
-                "Comparison": 2
-            },
-            "Energy, Passion, and Optimism": {
-                "Self": 5.3,
-                "Comparison": 5
-            },
-            "Dealing With Uncertainity": {
-                "Self": 3,
-                "Comparison": 9
-            },
-            "Grit And Persistence": {
-                "Self": 9.3,
-                "Comparison": 7.2
-            }
-        }
+if __name__ == "__main__":
+    payload = {
+        "Candidate": {"name": "John Doe", "company": "COMPANY_NAME"},
+        "Self-Confidence": {"Self": 9, "Comparison": 2},
+        "Resilience": {"Self": 8, "Comparison": 6},
+        "Achievement Orientation": {"Self": 6.3, "Comparison": 5.4},
+        "Adaptability": {"Self": 4, "Comparison": 3.4},
+        "Learnability": {"Self": 3, "Comparison": 4.2},
+        "Ownership And Accountability": {"Self": 9, "Comparison": 2},
+        "Energy, Passion, and Optimism": {"Self": 5.3, "Comparison": 5},
+        "Dealing With Uncertainity": {"Self": 3, "Comparison": 9},
+        "Grit And Persistence": {"Self": 9.3, "Comparison": 7.2},
+    }
 
     generate_interview_report(payload)
