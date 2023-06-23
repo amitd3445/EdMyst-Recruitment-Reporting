@@ -1,3 +1,4 @@
 interview_env
 resources/temp
 scripts/__pycache__
+.DS_Store

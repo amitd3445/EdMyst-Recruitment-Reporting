@@ -76,8 +76,6 @@ def _validate_payload(payload: Dict[str, Dict[str, Union[float, int, str]]]) -> 
                     "Input must be nested dictionaries with values as either string, int, or float"
                 )
 
-    return True
-
 
 def _parse_payload(
     payload: Dict[str, Dict[str, Union[float, int, str]]]
@@ -414,3 +412,50 @@ def _delete_temp_files() -> None:
         pathlib.Path(__file__).parent.parent / "templates" / "rendered_template.html"
     )
     os.remove(path_html_file)
+
+
+if __name__ == '__main__':
+    payload =         {
+            "Candidate": {
+                "name": "John Doe",
+                "company": "COMPANY_NAME"
+            },
+            "Self-Confidence": {
+                "Self": 9,
+                "Comparison": 2
+            },
+            "Resilience": {
+                "Self": 8,
+                "Comparison": 6
+            },
+            "Achievement Orientation": {
+                "Self": 6.3,
+                "Comparison": 5.4
+            },
+            "Adaptability": {
+                "Self": 4,
+                "Comparison": 3.4
+            },
+            "Learnability": {
+                "Self": 3,
+                "Comparison": 4.2
+            },
+            "Ownership And Accountability": {
+                "Self": 9,
+                "Comparison": 2
+            },
+            "Energy, Passion, and Optimism": {
+                "Self": 5.3,
+                "Comparison": 5
+            },
+            "Dealing With Uncertainity": {
+                "Self": 3,
+                "Comparison": 9
+            },
+            "Grit And Persistence": {
+                "Self": 9.3,
+                "Comparison": 7.2
+            }
+        }
+
+    generate_interview_report(payload)
