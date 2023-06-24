@@ -29,7 +29,6 @@ def parse_data(
         skills_dict = {}
 
         for row in reader:
-
             skill = row[0].lower()
 
             for i, cell in enumerate(row):

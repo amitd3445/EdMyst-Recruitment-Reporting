@@ -13,7 +13,9 @@ import weasyprint
 from jinja2 import Environment, FileSystemLoader
 
 
-def generate_interview_report(payload: Dict[str, Dict[str, Union[float, int, str]]]) -> None:
+def generate_interview_report(
+    payload: Dict[str, Dict[str, Union[float, int, str]]]
+) -> None:
     """
     Generate the interviewer assessment report by parsing the payload
 
@@ -70,7 +72,11 @@ def _validate_payload(payload: Dict[str, Dict[str, Union[float, int, str]]]) -> 
 
             if isinstance(value, dict):
                 stack.append(value)
-            elif not (isinstance(value, float)  or isinstance(value, int) or isinstance(value, str)):
+            elif not (
+                isinstance(value, float)
+                or isinstance(value, int)
+                or isinstance(value, str)
+            ):
                 raise TypeError(
                     "Input must be nested dictionaries with values as either string, int, or float"
                 )
@@ -107,7 +113,9 @@ def _generate_gauge_charts(series_scores: pd.Series) -> None:
     """
 
     # make guage charts for only top and bottom skills
-    list_top_skills, list_bottom_skills = _determine_top_and_bottom_skills(series_scores)
+    list_top_skills, list_bottom_skills = _determine_top_and_bottom_skills(
+        series_scores
+    )
     list_all_skills = list_top_skills + list_bottom_skills
     series_scores = series_scores[list_all_skills]
 
@@ -268,7 +276,7 @@ def _choose_skills_for_spider_plot(series_self_score: pd.Series) -> List[str]:
         List[str]: list of skills/categories selected
     """
 
-    return series_self_score.sample(n = 10).index
+    return series_self_score.sample(n=10).index
 
 
 def _generate_final_report(
@@ -301,8 +309,12 @@ def _generate_html(
     Returns:
         None
     """
-    list_top_skills, list_bottom_skills = _determine_top_and_bottom_skills(series_self_score)
-    number_top_skills, number_bottom_skills = len(list_top_skills), len(list_bottom_skills)
+    list_top_skills, list_bottom_skills = _determine_top_and_bottom_skills(
+        series_self_score
+    )
+    number_top_skills, number_bottom_skills = len(list_top_skills), len(
+        list_bottom_skills
+    )
 
     dict_report_text = _get_text_for_top_and_bottom_skills(
         list_top_skills, list_bottom_skills
@@ -319,7 +331,7 @@ def _generate_html(
         "number_bottom_skills": number_bottom_skills,
         "dict_report_text": dict_report_text,
         "dict_candidate": dict_candidate,
-        "date" : dt.date.today()
+        "date": dt.date.today(),
     }
 
     rendered_template = template.render(payload)
@@ -330,6 +342,7 @@ def _generate_html(
 
     with open(path_rendered_template, "w") as file:
         file.write(rendered_template)
+
 
 def _determine_top_and_bottom_skills(series_self_score: pd.Series) -> Tuple[List[str]]:
     """
@@ -344,8 +357,16 @@ def _determine_top_and_bottom_skills(series_self_score: pd.Series) -> Tuple[List
         Tuple[List[str]]: list of top and bottom skills
     """
 
-    list_top_skills = series_self_score[series_self_score > 6.5].sort_values(ascending=False).index.to_list()[:3]
-    list_bottom_skills = series_self_score[series_self_score < 6.5].sort_values(ascending=True).index.to_list()[:3]
+    list_top_skills = (
+        series_self_score[series_self_score > 6.5]
+        .sort_values(ascending=False)
+        .index.to_list()[:3]
+    )
+    list_bottom_skills = (
+        series_self_score[series_self_score < 6.5]
+        .sort_values(ascending=True)
+        .index.to_list()[:3]
+    )
 
     return list_top_skills, list_bottom_skills
 
@@ -363,17 +384,17 @@ def _get_text_for_top_and_bottom_skills(
     Returns:
         Dict[str, Dict[str, str]]: a dictionary that maps top and bottom skills to the respective text
     """
-    path_text = (
-        pathlib.Path(__file__).parent.parent / "resources" / "report_text.json"
-    )
+    path_text = pathlib.Path(__file__).parent.parent / "resources" / "report_text.json"
     with open(path_text) as f:
-        dict_text = json.load(f)   
+        dict_text = json.load(f)
 
     dict_top_bottom_skills = {}
 
     if top_skills:
         for skill in top_skills + bottom_skills:
-            dict_top_bottom_skills[skill] = {key: value for key, value in dict_text[skill].items()}
+            dict_top_bottom_skills[skill] = {
+                key: value for key, value in dict_text[skill].items()
+            }
 
     return dict_top_bottom_skills
 
@@ -430,212 +451,62 @@ def _delete_temp_files() -> None:
     os.remove(path_html_file)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     payload = {
-            "Candidate": {
-                "name": "John Doe",
-                "company": "COMPANY_NAME"
-            },
-            "Achievement orientation": {
-                "Self": 8,
-                "Comparison": 3
-            },
-            "Adaptability": {
-                "Self": 6,
-                "Comparison": 9
-            },
-            "Attention to detail": {
-                "Self": 2,
-                "Comparison": 7
-            },
-            "Big Picture Thinking": {
-                "Self": 4,
-                "Comparison": 5
-            },
-            "Coaching": {
-                "Self": 9,
-                "Comparison": 2
-            },
-            "Collaboration Skills": {
-                "Self": 7,
-                "Comparison": 6
-            },
-            "Commercial Acumen": {
-                "Self": 5,
-                "Comparison": 4
-            },
-            "Contextualization of knowledge": {
-                "Self": 3,
-                "Comparison": 8
-            },
-            "Courage and risk-taking": {
-                "Self": 1,
-                "Comparison": 10
-            },
-            "Creative Problem Solving": {
-                "Self": 10,
-                "Comparison": 1
-            },
-            "Critical Thinking": {
-                "Self": 4,
-                "Comparison": 7
-            },
-            "Dealing with uncertainty": {
-                "Self": 7,
-                "Comparison": 3
-            },
-            "Developing others": {
-                "Self": 9,
-                "Comparison": 2
-            },
-            "Driving change and innovation": {
-                "Self": 6,
-                "Comparison": 4
-            },
-            "Empathetic": {
-                "Self": 8,
-                "Comparison": 3
-            },
-            "Empowering others": {
-                "Self": 5,
-                "Comparison": 6
-            },
-            "Energy, passion, and optimism": {
-                "Self": 3,
-                "Comparison": 9
-            },
-            "Exploring perspectives and alternatives": {
-                "Self": 4,
-                "Comparison": 8
-            },
-            "Fostering inclusiveness": {
-                "Self": 7,
-                "Comparison": 5
-            },
-            "Grit and persistence": {
-                "Self": 6,
-                "Comparison": 7
-            },
-            "Instilling Trust": {
-                "Self": 9,
-                "Comparison": 2
-            },
-            "Learnability": {
-                "Self": 8,
-                "Comparison": 4
-            },
-            "Motivating and inspiring others": {
-                "Self": 3,
-                "Comparison": 6
-            },
-            "Negotiation and Persuasion": {
-                "Self": 2,
-                "Comparison": 9
-            },
-            "Openness to feedback": {
-                "Self": 5,
-                "Comparison": 8
-            },
-            "Organizational awareness": {
-                "Self": 7,
-                "Comparison": 3
-            },
-            "Ownership and accountability": {
-                "Self": 4,
-                "Comparison": 6
-            },
-            "Planning": {
-                "Self": 6,
-                "Comparison": 5
-            },
-            "Positive Mindset": {
-                "Self": 9,
-                "Comparison": 3
-            },
-            "Presentation Skills": {
-                "Self": 8,
-                "Comparison": 4
-            },
-            "Project management": {
-                "Self": 2,
-                "Comparison": 7
-            },
-            "Promoting a culture of respect": {
-                "Self": 6,
-                "Comparison": 8
-            },
-            "Purpose-driven": {
-                "Self": 9,
-                "Comparison": 7
-            },
-            "Resilience": {
-                "Self": 8,
-                "Comparison": 6
-            },
-            "Role Modeling": {
-                "Self": 7,
-                "Comparison": 9
-            },
-            "Self-confidence": {
-                "Self": 8,
-                "Comparison": 7
-            },
-            "Self-control and regulation": {
-                "Self": 7,
-                "Comparison": 8
-            },
-            "Self-directedness": {
-                "Self": 6,
-                "Comparison": 9
-            },
-            "Self-motivation": {
-                "Self": 9,
-                "Comparison": 6
-            },
-            "Speaking with conviction": {
-                "Self": 7,
-                "Comparison": 8
-            },
-            "Storytelling": {
-                "Self": 8,
-                "Comparison": 7
-            },
-            "Strategic Thinking": {
-                "Self": 9,
-                "Comparison": 6
-            },
-            "Synthesizing messages": {
-                "Self": 7,
-                "Comparison": 9
-            },
-            "Time management and prioritization": {
-                "Self": 8,
-                "Comparison": 7
-            },
-            "Unconventional approach (breaking stereotypes and barriers)": {
-                "Self": 9,
-                "Comparison": 6
-            },
-            "Understanding of the external environment": {
-                "Self": 7,
-                "Comparison": 8
-            },
-            "Understanding one's emotions": {
-                "Self": 8,
-                "Comparison": 7
-            },
-            "Understanding one's strengths": {
-                "Self": 9,
-                "Comparison": 6
-            },
-            "Vision Alignment": {
-                "Self": 7,
-                "Comparison": 9
-            },
-            "Voice, articulation, and diction": {
-                "Self": 8,
-                "Comparison": 7
-            }
-}
+        "Candidate": {"name": "John Doe", "company": "COMPANY_NAME"},
+        "Achievement orientation": {"Self": 8, "Comparison": 3},
+        "Adaptability": {"Self": 6, "Comparison": 9},
+        "Attention to detail": {"Self": 2, "Comparison": 7},
+        "Big Picture Thinking": {"Self": 4, "Comparison": 5},
+        "Coaching": {"Self": 9, "Comparison": 2},
+        "Collaboration Skills": {"Self": 7, "Comparison": 6},
+        "Commercial Acumen": {"Self": 5, "Comparison": 4},
+        "Contextualization of knowledge": {"Self": 3, "Comparison": 8},
+        "Courage and risk-taking": {"Self": 1, "Comparison": 10},
+        "Creative Problem Solving": {"Self": 10, "Comparison": 1},
+        "Critical Thinking": {"Self": 4, "Comparison": 7},
+        "Dealing with uncertainty": {"Self": 7, "Comparison": 3},
+        "Developing others": {"Self": 9, "Comparison": 2},
+        "Driving change and innovation": {"Self": 6, "Comparison": 4},
+        "Empathetic": {"Self": 8, "Comparison": 3},
+        "Empowering others": {"Self": 5, "Comparison": 6},
+        "Energy, passion, and optimism": {"Self": 3, "Comparison": 9},
+        "Exploring perspectives and alternatives": {"Self": 4, "Comparison": 8},
+        "Fostering inclusiveness": {"Self": 7, "Comparison": 5},
+        "Grit and persistence": {"Self": 6, "Comparison": 7},
+        "Instilling Trust": {"Self": 9, "Comparison": 2},
+        "Learnability": {"Self": 8, "Comparison": 4},
+        "Motivating and inspiring others": {"Self": 3, "Comparison": 6},
+        "Negotiation and Persuasion": {"Self": 2, "Comparison": 9},
+        "Openness to feedback": {"Self": 5, "Comparison": 8},
+        "Organizational awareness": {"Self": 7, "Comparison": 3},
+        "Ownership and accountability": {"Self": 4, "Comparison": 6},
+        "Planning": {"Self": 6, "Comparison": 5},
+        "Positive Mindset": {"Self": 9, "Comparison": 3},
+        "Presentation Skills": {"Self": 8, "Comparison": 4},
+        "Project management": {"Self": 2, "Comparison": 7},
+        "Promoting a culture of respect": {"Self": 6, "Comparison": 8},
+        "Purpose-driven": {"Self": 9, "Comparison": 7},
+        "Resilience": {"Self": 8, "Comparison": 6},
+        "Role Modeling": {"Self": 7, "Comparison": 9},
+        "Self-confidence": {"Self": 8, "Comparison": 7},
+        "Self-control and regulation": {"Self": 7, "Comparison": 8},
+        "Self-directedness": {"Self": 6, "Comparison": 9},
+        "Self-motivation": {"Self": 9, "Comparison": 6},
+        "Speaking with conviction": {"Self": 7, "Comparison": 8},
+        "Storytelling": {"Self": 8, "Comparison": 7},
+        "Strategic Thinking": {"Self": 9, "Comparison": 6},
+        "Synthesizing messages": {"Self": 7, "Comparison": 9},
+        "Time management and prioritization": {"Self": 8, "Comparison": 7},
+        "Unconventional approach (breaking stereotypes and barriers)": {
+            "Self": 9,
+            "Comparison": 6,
+        },
+        "Understanding of the external environment": {"Self": 7, "Comparison": 8},
+        "Understanding one's emotions": {"Self": 8, "Comparison": 7},
+        "Understanding one's strengths": {"Self": 9, "Comparison": 6},
+        "Vision Alignment": {"Self": 7, "Comparison": 9},
+        "Voice, articulation, and diction": {"Self": 8, "Comparison": 7},
+    }
 
     generate_interview_report(payload)
