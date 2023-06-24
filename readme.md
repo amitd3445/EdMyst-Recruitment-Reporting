@@ -22,6 +22,7 @@ Request Headers:
     Content-type: Application/JSON
 Request Body:
     A json blob of this format:
+    ```json
         {
             "Candidate": {
                 "name": "John Doe",
@@ -64,6 +65,7 @@ Request Body:
                 "Comparison": 7.2
             }
         }
+    ```
 Reponse:
     Successful invocation: 200
     Unsuccessful invocation - TypeError: 500

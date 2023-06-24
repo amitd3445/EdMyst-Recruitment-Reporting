@@ -31,14 +31,14 @@
 
 @page :first {
     background: url(./front_page.jpg) no-repeat center;
-    background-size: cover;
+    background-size: contain;
     margin: 0;
   }
 
 html {
   color: #393939;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 11pt;
+  font-family: Calibri;
+  font-size: 10pt;
   font-weight: 300;
   line-height: 1.25;
 }
@@ -91,6 +91,22 @@ html body article#cover section {
   text-align: right;
 }
 
+ul.toc a::after {
+  content: leader('.') target-counter(attr(href url), page);  
+}
+
+.toc {
+  list-style: none;
+  padding-left: 0;
+}
+
+.custom-link {
+  color: rgb(1, 1, 1); 
+  text-decoration: none; 
+  font-weight: bold;
+  font-size: medium;
+}
+
 .image-interview-questions img {
     display: block;
     margin: auto;
@@ -140,6 +156,23 @@ html body article#cover section {
     overflow-wrap: break-word;
     word-wrap: break-word;
     hyphens: auto;
+}
+
+.front-page-text {
+  text-align: left;
+  position: absolute;
+  top: 14cm;
+  left: 6.4cm;
+}
+
+.front-page-text p {
+  color: #106ba8;
+  font-size: 18pt;
+  font-weight: bold;
+}
+
+.color-blue {
+  color: #106ba8;
 }
 
 #pic {
