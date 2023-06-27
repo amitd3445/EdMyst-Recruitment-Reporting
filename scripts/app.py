@@ -5,7 +5,7 @@ from generate_pdf_report import generate_interview_report
 app = Flask(__name__)
 
 
-@app.route("/candidate_reporting/generate_interview_questions_pdf", methods=["POST"])
+@app.route("/recruitment_reporting/generate_interview_questions_pdf", methods=["POST"])
 def generate_pdf_endpoint():
     try:
         payload = request.get_json()
