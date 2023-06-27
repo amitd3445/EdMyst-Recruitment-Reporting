@@ -2,7 +2,7 @@ Introduction:
     A REST API designed to generate PDF reports based on the recruitment assessment scores and the candidate's profile. Designed to be deployed on AWS. The PDF report will be saved in the results folder. All static images used to design the PDF report will be deleted after the PDF is built.
 
 Base URL:
-    /candidate_reporting/
+    /recruitment_reporting/
 
 Error Handling:
     Raises an error if the input is not a nested dictionaries with values of type float, int, or string. 
