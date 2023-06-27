@@ -38,7 +38,7 @@ def generate_interview_report(
     _generate_gauge_charts(df_all_scores["Self"])
     _generate_spider_plot(*list_series_agent_scores)
     _generate_final_report(dict_candidate, df_all_scores["Self"])
-    #_delete_temp_files()
+    _delete_temp_files()
 
 
 def _validate_payload(payload: Dict[str, Dict[str, Union[float, int, str]]]) -> None:
@@ -99,13 +99,6 @@ def _parse_payload(
     list_series_agent_scores = [df_all_scores[col] for col in df_all_scores.columns]
     return (dict_candidate, df_all_scores, list_series_agent_scores)
 
-
-def _generate_job_fitment_chart(data_dict: Dict[str, float]) -> None:
-    """
-    
-    """
-    
-    raise NotImplementedError
 
 def _generate_gauge_charts(series_scores: pd.Series) -> None:
     """
@@ -222,6 +215,7 @@ def _generate_spider_plot(*args: pd.Series) -> None:
     N = len(categories)
     PI = 3.14592
 
+    # define color scheme for up to 10 comparisons
     colors = [
         "#FF0000",  # (Red)
         "#00FF00",  # (Lime Green)
@@ -271,10 +265,7 @@ def _choose_skills_for_spider_plot(series_self_score: pd.Series) -> List[str]:
         List[str]: list of skills/categories selected
     """
 
-    series_sorted = series_self_score.sort_values(ascending=False)
-    top_5 = series_sorted[:5].index.to_list()
-    bottom_5 = series_sorted[-5:].index.to_list()
-    return top_5 + bottom_5
+    return series_self_score.sample(n=10).index
 
 
 def _generate_final_report(
@@ -291,6 +282,7 @@ def _generate_final_report(
         None
     """
     _generate_html(dict_candidate, series_self_score)
+
 
 def _generate_html(
     dict_candidate: Dict[str, str], series_self_score: pd.Series
@@ -332,9 +324,8 @@ def _generate_html(
 
     rendered_template = template.render(payload)
 
-    file_name = "_".join(dict_candidate['name'].split(" ")) + "_" + "_".join(dict_candidate['company'].split(" ")) + '.html'
     path_rendered_template = (
-        pathlib.Path(__file__).parent.parent / "results" / file_name
+        pathlib.Path(__file__).parent.parent / "templates" / "rendered_template.html"
     )
 
     with open(path_rendered_template, "w") as file:
@@ -395,6 +386,7 @@ def _get_text_for_top_and_bottom_skills(
 
     return dict_top_bottom_skills
 
+
 def _delete_temp_files() -> None:
     """
     Deletes all files that were created except for the PDF file (images/graphs and html/css)
@@ -407,12 +399,20 @@ def _delete_temp_files() -> None:
     """
     directory = pathlib.Path(__file__).parent.parent / "tmp"
 
+    # Get a list of all files in the directory
     file_list = os.listdir(directory)
 
+    # Iterate over the file list and delete each file
     for filename in file_list:
         file_path = os.path.join(directory, filename)
         if os.path.isfile(file_path):
             os.remove(file_path)
+
+    path_html_file = (
+        pathlib.Path(__file__).parent.parent / "templates" / "rendered_template.html"
+    )
+    os.remove(path_html_file)
+
 
 if __name__ == "__main__":
     payload = {
