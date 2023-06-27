@@ -9,7 +9,6 @@ import matplotlib
 
 matplotlib.use("Agg")
 from matplotlib import pyplot as plt
-import weasyprint
 from jinja2 import Environment, FileSystemLoader
 
 
@@ -39,7 +38,7 @@ def generate_interview_report(
     _generate_gauge_charts(df_all_scores["Self"])
     _generate_spider_plot(*list_series_agent_scores)
     _generate_final_report(dict_candidate, df_all_scores["Self"])
-    _delete_temp_files()
+    #_delete_temp_files()
 
 
 def _validate_payload(payload: Dict[str, Dict[str, Union[float, int, str]]]) -> None:
@@ -101,9 +100,16 @@ def _parse_payload(
     return (dict_candidate, df_all_scores, list_series_agent_scores)
 
 
+def _generate_job_fitment_chart(data_dict: Dict[str, float]) -> None:
+    """
+    
+    """
+    
+    raise NotImplementedError
+
 def _generate_gauge_charts(series_scores: pd.Series) -> None:
     """
-    Creates gauge graphs for all skills from the individual's self-assessment and save the static image to the resources/temp folder
+    Creates gauge graphs for all skills from the individual's self-assessment and save the static image to the tmp folder
 
     Args:
         param(pd.Series): a pandas series that corresponds to the score receieved for each skill
@@ -130,8 +136,7 @@ def _generate_gauge_charts(series_scores: pd.Series) -> None:
         category_string = str(category) + ".jpeg"
         path_category = (
             pathlib.Path(__file__).parent.parent
-            / "resources"
-            / "temp"
+            / "tmp"
             / category_string
         )
 
@@ -217,18 +222,9 @@ def _generate_spider_plot(*args: pd.Series) -> None:
     N = len(categories)
     PI = 3.14592
 
-    # define color scheme for up to 10 comparisons
     colors = [
         "#FF0000",  # (Red)
         "#00FF00",  # (Lime Green)
-        "#0000FF",  # (Blue)
-        "#FFFF00",  # (Yellow)
-        "#FF00FF",  # (Magenta)
-        "#00FFFF",  # (Cyan)
-        "#800080",  # (Purple)
-        "#FFA500",  # (Orange)
-        "#008000",  # (Green)
-        "#FFC0CB",  # (Pink)
     ]
 
     angles = [n / float(N) * 2 * PI for n in range(N)]
@@ -258,8 +254,7 @@ def _generate_spider_plot(*args: pd.Series) -> None:
 
     path_spiderplot_graph = (
         pathlib.Path(__file__).parent.parent
-        / "resources"
-        / "temp"
+        / "tmp"
         / "baseline_assessment.jpg"
     )
     plt.savefig(path_spiderplot_graph, format="jpg")
@@ -276,7 +271,10 @@ def _choose_skills_for_spider_plot(series_self_score: pd.Series) -> List[str]:
         List[str]: list of skills/categories selected
     """
 
-    return series_self_score.sample(n=10).index
+    series_sorted = series_self_score.sort_values(ascending=False)
+    top_5 = series_sorted[:5].index.to_list()
+    bottom_5 = series_sorted[-5:].index.to_list()
+    return top_5 + bottom_5
 
 
 def _generate_final_report(
@@ -293,8 +291,6 @@ def _generate_final_report(
         None
     """
     _generate_html(dict_candidate, series_self_score)
-    _generate_pdf(dict_candidate)
-
 
 def _generate_html(
     dict_candidate: Dict[str, str], series_self_score: pd.Series
@@ -336,8 +332,9 @@ def _generate_html(
 
     rendered_template = template.render(payload)
 
+    file_name = "_".join(dict_candidate['name'].split(" ")) + "_" + "_".join(dict_candidate['company'].split(" ")) + '.html'
     path_rendered_template = (
-        pathlib.Path(__file__).parent.parent / "templates" / "rendered_template.html"
+        pathlib.Path(__file__).parent.parent / "results" / file_name
     )
 
     with open(path_rendered_template, "w") as file:
@@ -398,32 +395,6 @@ def _get_text_for_top_and_bottom_skills(
 
     return dict_top_bottom_skills
 
-
-def _generate_pdf(dict_candidate: Dict[str, str]) -> None:
-    """
-    Creates the final PDF file and saves to the results folder
-
-    Args:
-        param1(Dict[str, int | str]]): The candidate's profile
-
-    Returns:
-        None
-    """
-    name, company = dict_candidate["name"].replace(" ", "_"), dict_candidate[
-        "company"
-    ].replace(" ", "_")
-    date_today_string = dt.date.today().strftime("%Y-%m-%d")
-    report_filename = "_".join([name, company, date_today_string])
-    report_filename += ".pdf"
-
-    path_html_file = (
-        pathlib.Path(__file__).parent.parent / "templates" / "rendered_template.html"
-    )
-    path_pdf_report = pathlib.Path(__file__).parent.parent / "results" / report_filename
-
-    weasyprint.HTML(path_html_file).write_pdf(path_pdf_report)
-
-
 def _delete_temp_files() -> None:
     """
     Deletes all files that were created except for the PDF file (images/graphs and html/css)
@@ -434,22 +405,14 @@ def _delete_temp_files() -> None:
     Returns:
         None
     """
-    directory = pathlib.Path(__file__).parent.parent / "resources" / "temp"
+    directory = pathlib.Path(__file__).parent.parent / "tmp"
 
-    # Get a list of all files in the directory
     file_list = os.listdir(directory)
 
-    # Iterate over the file list and delete each file
     for filename in file_list:
         file_path = os.path.join(directory, filename)
         if os.path.isfile(file_path):
             os.remove(file_path)
-
-    path_html_file = (
-        pathlib.Path(__file__).parent.parent / "templates" / "rendered_template.html"
-    )
-    os.remove(path_html_file)
-
 
 if __name__ == "__main__":
     payload = {
