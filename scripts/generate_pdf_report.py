@@ -12,7 +12,8 @@ import matplotlib.colors as mcolors
 matplotlib.use("Agg")
 from matplotlib import pyplot as plt
 from jinja2 import Environment, FileSystemLoader
-#import weasyprint
+
+# import weasyprint
 
 
 def generate_interview_report(
@@ -47,7 +48,7 @@ def generate_interview_report(
     _generate_gauge_charts(df_all_scores["Self"])
     _generate_spider_plot(*list_series_agent_scores)
     _generate_final_report(dict_candidate, df_all_scores["Self"])
-    #_delete_temp_files()
+    # _delete_temp_files()
 
 
 def _validate_payload(payload: Dict[str, Dict[str, Union[float, int, str]]]) -> None:
@@ -112,11 +113,11 @@ def _parse_payload(
 
 def _generate_job_fitment_bar(dict_scores: Dict[str, Union[float, int]]) -> None:
     """
-    Creates horizontal gauge charts based on the individual's scores.
+    Creates horizontal gauge chart to show how the employee's resume compared to the job description.
 
     Args:
-        param(Dict[str, Dict[str, Union[float, int]]]): a nested dictionary that corresponds
-        to the score receieved for each focus area/skill
+        param(Dict[str, Union[float, int]]): a dictionary that corresponds to how close the candidate's
+        resume and the population's resumes compared to the job descriptino
 
     Returns:
         None
@@ -411,6 +412,7 @@ def _choose_skills_for_spider_plot(series_self_score: pd.Series) -> List[str]:
     list_top_skills = series_sorted[-5:].index.to_list()
     return list_bottom_skills + list_top_skills
 
+
 def _generate_final_report(
     dict_candidate: Dict[str, str], series_self_score: pd.Series
 ) -> None:
@@ -425,7 +427,7 @@ def _generate_final_report(
         None
     """
     _generate_html(dict_candidate, series_self_score)
-    #_generate_pdf(dict_candidate)
+    # _generate_pdf(dict_candidate)
 
 
 def _generate_html(
@@ -467,7 +469,7 @@ def _generate_html(
     }
 
     rendered_template = template.render(payload)
-    
+
     name, company = dict_candidate["name"].replace(" ", "_"), dict_candidate[
         "company_name"
     ].replace(" ", "_")
@@ -554,12 +556,14 @@ def _generate_pdf(dict_candidate: Dict[str, str]) -> None:
     date_today_string = dt.date.today().strftime("%Y-%m-%d")
     report_filename = "_".join([name, company, date_today_string])
     report_filename_html = report_filename + ".html"
-    report_filename_pdf = report_filename + '.pdf'
+    report_filename_pdf = report_filename + ".pdf"
 
     path_html_file = (
         pathlib.Path(__file__).parent.parent / "results" / report_filename_html
     )
-    path_pdf_report = pathlib.Path(__file__).parent.parent / "results" / report_filename_pdf
+    path_pdf_report = (
+        pathlib.Path(__file__).parent.parent / "results" / report_filename_pdf
+    )
 
     weasyprint.HTML(path_html_file).write_pdf(path_pdf_report)
 
