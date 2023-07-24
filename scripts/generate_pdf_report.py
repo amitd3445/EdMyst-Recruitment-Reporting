@@ -13,8 +13,6 @@ matplotlib.use("Agg")
 from matplotlib import pyplot as plt
 from jinja2 import Environment, FileSystemLoader
 
-# import weasyprint
-
 
 def generate_interview_report(
     payload: Dict[str, Dict[str, Union[float, int, str]]]
@@ -48,7 +46,6 @@ def generate_interview_report(
     _generate_gauge_charts(df_all_scores["Self"])
     _generate_spider_plot(*list_series_agent_scores)
     _generate_final_report(dict_candidate, df_all_scores["Self"])
-    # _delete_temp_files()
 
 
 def _validate_payload(payload: Dict[str, Dict[str, Union[float, int, str]]]) -> None:
@@ -564,35 +561,6 @@ def _generate_pdf(dict_candidate: Dict[str, str]) -> None:
     path_pdf_report = (
         pathlib.Path(__file__).parent.parent / "results" / report_filename_pdf
     )
-
-    weasyprint.HTML(path_html_file).write_pdf(path_pdf_report)
-
-
-def _delete_temp_files() -> None:
-    """
-    Deletes all files that were created except for the PDF file (images/graphs and html/css)
-
-    Args:
-        None
-
-    Returns:
-        None
-    """
-    directory = pathlib.Path(__file__).parent.parent / "tmp"
-
-    # Get a list of all files in the directory
-    file_list = os.listdir(directory)
-
-    # Iterate over the file list and delete each file
-    for filename in file_list:
-        file_path = os.path.join(directory, filename)
-        if os.path.isfile(file_path):
-            os.remove(file_path)
-
-    path_html_file = (
-        pathlib.Path(__file__).parent.parent / "templates" / "rendered_template.html"
-    )
-    os.remove(path_html_file)
 
 
 if __name__ == "__main__":

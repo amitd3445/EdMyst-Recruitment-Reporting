@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Large Image Section</title>
         <link rel="stylesheet" href="../resources/pilot.css">
     </head>
 
@@ -12,7 +11,7 @@
         <article id="cover">
             <section>
                 <div class="front-page-text">
-                    <p style="color: #106ba8; font-size: 30pt;">Job Fitment and Behavioral Assessment Report</p>
+                    <p style="color: #106ba8; font-size: 30pt;">Talent Insights Report</p>
                     <br>
                     <p>{{ dict_candidate['name']|upper }}</p>
                     <p>{{ date }}</p>
@@ -26,11 +25,11 @@
             <section>
                 <h2 class="color-blue">Contents</h2>
                 <ul class="toc">
-                    <li><a href="#page1" class="custom-link">INTERVIEWER CHECKLIST</a></li>
+                    <li><a href="#page1" class="custom-link">ADMINISTRATOR CHECKLIST</a></li>
                     <li><a href="#page2" class="custom-link">SUMMARY</a></li>
                     <li><a href="#page3" class="custom-link">POTENTIAL STRENGTHS</a></li>
                     <li><a href="#page4" class="custom-link">DEVELOPMENT CONSIDERATIONS</a></li>
-                    <li><a href="#page5" class="custom-link">INTERVIEW QUESTIONS</a></li>
+                    <li><a href="#page5" class="custom-link">INSIGHTS AND SUGGESTIONS</a></li>
                     <li><a href="#page6" class="custom-link">NEXT STEPS</a></li>
                     <li><a href="#page7" class="custom-link">DISCLAIMER AND COPYRIGHT</a></li>
                 </ul>
@@ -41,9 +40,9 @@
         
         <article style="page-break-before: always">
             <section>
-                <h1 id="page1" class="color-blue">INTERVIEWER CHECKLIST</h1>
-                <p>This report is designed to help you gain insights into the desired behavioral skills to be successful in the job role. It will assist the interviewer in developing an interview strategy that probes more deeply into on-the-job behaviors.</p>
-                <h2 class="color-blue">Before The Interview</h2>
+                <h1 id="page1" class="color-blue">ADMINISTRATOR CHECKLIST</h1>
+                <p>This report is designed to help you gain insights into the desired behavioral skills to be successful in the job role. It will assist the administrator in developing a strategy that probes more deeply into on-the-job behaviors.</p>
+                <h2 class="color-blue">Before The Interaction</h2>
                 <div class="div-before-interview-container">
                     <div class="div-before-interview">
                         <h4 class="color-blue">1</h4>
@@ -55,15 +54,15 @@
                     </div>  
                     <div class="div-before-interview">
                         <h4 class="color-blue">3</h4>
-                        <p>Review the interview questions and get an understanding of what to expect in the responses</p>
+                        <p>Review the insights and suggestions to get an understanding of what to expect in the responses</p>
                     </div>    
                 </div>
-                <h2 class="color-blue">Tips For the Interviewer</h2>
+                <h2 class="color-blue">Tips For the Administrator</h2>
                 <div class="image-interview-questions">
                     <img src="../resources/tips.jpg">
                 </div>
-                <h2 class="color-blue">After The Interview</h2>
-                <p>Review the job fitment recommended in the report, behavioral skills' scores, strengths and gaps, your notes, add detail, score responses and make a recommendation.</p>
+                <h2 class="color-blue">After The Interaction</h2>
+                <p>Review the requirement match recommended in the report, behavioral skills' scores, strengths and gaps, your notes, add detail, score responses and make a recommendation.</p>
                 <div class="image-interview-questions">
                     <img src="../resources/after_interview_pic.jpg">
                 </div>
@@ -77,7 +76,7 @@
                 <h1 id="page2" class="color-blue">SUMMARY</h1>
                 <br>
                 <div>
-                    <h3 class="color-blue">Job Fit Measurement - Resume Match To Job Description</h3>
+                    <h3 class="color-blue">Requirement Match - Resume Match To Job Description</h3>
                     <div>
                         <img src="../tmp/job_fitment_graphic.jpg" alt="Picture" id="pic">
                         <p class="color-blue">R1 - Minimum score of all applicants</p>
@@ -147,7 +146,7 @@
             {% for skill in list_top_skills %}
                 <article style="page-break-before: always">
                     <section>
-                        <h2 id="page5" class="color-blue">Interview Questions - Strength Analysis</h2>
+                        <h2 id="page5" class="color-blue">Insights And Suggestions - Strength Analysis</h2>
                         <div class="top-header-skills">
                             <div>
                                 <h5>{{ skill|upper }}: HIGH</h5>
@@ -182,7 +181,7 @@
             {% for skill in list_bottom_skills %}
                 <article style="page-break-before: always">
                     <section>
-                        <h2 class="color-blue">Interview Questions - Development Gap Analysis</h2>
+                        <h2 class="color-blue">Insights and Suggestions - Development Gap Analysis</h2>
                         <div class="top-header-skills">
                             <div>
                                 <h5>{{ skill|upper }}: LOW</h5>
