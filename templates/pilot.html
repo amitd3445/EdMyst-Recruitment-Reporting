@@ -23,7 +23,7 @@
         
         <article style="page-break-before: always">
             <section>
-                <h2 class="color-blue">Contents</h2>
+                <h2 class="color-blue">Table Of Contents</h2>
                 <ul class="toc">
                     <li><a href="#page1" class="custom-link">ADMINISTRATOR CHECKLIST</a></li>
                     <li><a href="#page2" class="custom-link">SUMMARY</a></li>
@@ -41,7 +41,7 @@
         <article style="page-break-before: always">
             <section>
                 <h1 id="page1" class="color-blue">ADMINISTRATOR CHECKLIST</h1>
-                <p>This report is designed to help you gain insights into the desired behavioral skills to be successful in the job role. It will assist the administrator in developing a strategy that probes more deeply into on-the-job behaviors.</p>
+                <p>This report is designed to help you gain insights into the technical and behavioral skills of the candidate in the context of the job description. It assists the Administrator in probing more deeply into specific areas.</p>
                 <h2 class="color-blue">Before The Interaction</h2>
                 <div class="div-before-interview-container">
                     <div class="div-before-interview">
@@ -54,7 +54,7 @@
                     </div>  
                     <div class="div-before-interview">
                         <h4 class="color-blue">3</h4>
-                        <p>Review the insights and suggestions to get an understanding of what to expect in the responses</p>
+                        <p>Review the insights and understand of nature of responses you expect what to expect</p>
                     </div>    
                 </div>
                 <h2 class="color-blue">Tips For the Administrator</h2>
@@ -62,34 +62,56 @@
                     <img src="../resources/tips.jpg">
                 </div>
                 <h2 class="color-blue">After The Interaction</h2>
-                <p>Review the requirement match recommended in the report, behavioral skills' scores, strengths and gaps, your notes, add detail, score responses and make a recommendation.</p>
+                <p>Review the insights in this Report, skills' scores, strengths and improvement opportunities, and your observations.</p>
                 <div class="image-interview-questions">
                     <img src="../resources/after_interview_pic.jpg">
                 </div>
             </section>
         </article>
 
-    <!-- description of skills -->
+    <!-- summary of skills -->
         
         <article style="page-break-before: always">
             <section>
                 <h1 id="page2" class="color-blue">SUMMARY</h1>
                 <br>
                 <div>
-                    <h3 class="color-blue">Requirement Match - Resume Match To Job Description</h3>
+                    <h3 class="color-blue">Technical Skills</h3>
                     <div>
-                        <img src="../tmp/job_fitment_graphic.jpg" alt="Picture" id="pic">
-                        <p class="color-blue">R1 - Minimum score of all applicants</p>
-                        <p class="color-blue">R2 - Maximum score of all applicants</p>
-                        <p class="color-blue">S - Candidate's match score</p>
+                        <img src="../tmp/technical_skills.jpg" alt="Picture" id="bar_chart">
                     </div>
                 </div>
                 <br>
                 <br>
                 <div>
-                    <h3 class="color-blue">Graphical Summary</h3>
+                    <h3 class="color-blue">Behavioral Skills</h3>
                     <div>
                         <img src="../tmp/baseline_assessment.jpg" alt="Picture" id="spider">
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <article style="page-break-before: always">
+            <section>
+                <h3 class="color-blue">Communication Skills</h3>
+                <br>
+                <br>
+                <div>
+                    {% for skill in list_video_skills %}
+                        <div class="horizontal-flexbox">
+                            <h4>{{ skill.replace('_', ' ')|lower }}</h4>
+                            <img src="../tmp/{{ skill }}_colorbar.jpg" style="width: 10cm; height: 2cm">
+                        </div>
+                        <div class="line"></div>
+                    {% endfor %}
+                </div>
+                <div>
+                    <h3 class="color-blue">Requirement Match</h3>
+                    <div>
+                        <p class="color-blue">Resume match to the requirement</p>
+                        <img src="../tmp/job_fitment_graphic.jpg" alt="Picture" id="job_fitment_pic">
+                        <p class="color-blue">S - Candidate's match score</p>
                     </div>
                 </div>
             </section>
@@ -152,7 +174,7 @@
                                 <h5>{{ skill|upper }}: HIGH</h5>
                             </div>
                             <div>
-                                <img src="../tmp/{{ skill }}.jpeg" alt="Picture">
+                                <img src="../tmp/{{ skill }}_gauge.jpg" alt="Picture">
                             </div>
                         </div>
                         <div>
@@ -166,9 +188,6 @@
                                     <br>
                                     </ul>
                             {% endfor %}
-                        </div>
-                        <div class="image-score-ticker">
-                            <img src="../resources/score.jpg" alt="Picture">
                         </div>
                     </section>
                 </article> 
@@ -187,7 +206,7 @@
                                 <h5>{{ skill|upper }}: LOW</h5>
                             </div>
                             <div>
-                                <img src="../tmp/{{ skill }}.jpeg" alt="Picture">
+                                <img src="../tmp/{{ skill }}_gauge.jpg" alt="Picture">
                             </div>
                         </div>
                         <div>
@@ -202,50 +221,10 @@
                                     </ul>
                             {% endfor %}
                         </div>
-                        <div class="image-score-ticker">
-                            <img src="../resources/score.jpg" alt="Picture">
-                        </div>
                     </section>
                 </article> 
             {% endfor %}
         {% endif %}
-
-    <!-- Next Steps -->
-
-        <article style="page-break-before: always">
-            <section>
-                <h2 id="page6" class="color-blue">Next Steps</h2>
-                <h4>Overall Job Match</h4>
-                <br>
-                <div class="image-score-ticker">
-                    <img src="../resources/score.jpg" alt="Picture">
-                </div>
-                <br>
-                <h4>Action Steps</h4>
-                <div>
-                    <p>_____________________________________________________________________________</p>
-                    <p>_____________________________________________________________________________</p>
-                    <p>_____________________________________________________________________________</p>
-                    <p>_____________________________________________________________________________</p>
-                    <p>_____________________________________________________________________________</p>
-                    <p>_____________________________________________________________________________</p>
-                    <p>_____________________________________________________________________________</p>
-                    <p>_____________________________________________________________________________</p>
-                </div>
-                <br>
-                <h4>Comments</h4>
-                <div>
-                    <p>_____________________________________________________________________________</p>
-                    <p>_____________________________________________________________________________</p>
-                    <p>_____________________________________________________________________________</p>
-                    <p>_____________________________________________________________________________</p>
-                    <p>_____________________________________________________________________________</p>
-                    <p>_____________________________________________________________________________</p>
-                    <p>_____________________________________________________________________________</p>
-                    <p>_____________________________________________________________________________</p>
-                </div>
-            </section>
-        </article>
 
     <!-- Disclaimer & Copyright -->
 
@@ -254,10 +233,10 @@
                 <h3 id="page7" style="text-decoration: underline; font-weight: bold; color: #106ba8;">Disclaimer and Copyright</h3>
                 <br>
                 <h4 style="font-weight: bold;">Disclaimer</h4>
-                <p>This report is a property of {{ company }} and the information provided in the report is to be used only by the individual or entity to which it is addressed, else you are hereby notified that any dissemination, distribution or copying of this communication is strictly prohibited. The interpretive information contained in this report should be viewed as only one source of hypotheses about the individual/ group being evaluated. No decisions should be based solely on the information contained in this report. Any interpretation of this report should take into account ALL relevant input such as actual experience, skills, interests, abilities, the market being addressed and product being sold. This material should be integrated with all other sources of information in reaching professional decisions about this individual. This report is confidential and intended for use by qualified professionals only. </p>
+                <p>This report is a property of EdMyst Inc. and the information provided in the report is to be used only by the individual or entity to which it is addressed, else you are hereby notified that any dissemination, distribution or copying of this communication is strictly prohibited. The interpretive information contained in this report should be viewed as only one source of hypotheses about the individual/ group being evaluated. No decisions should be based solely on the information contained in this report. Any interpretation of this report should take into account ALL relevant input such as actual experience, skills, interests, abilities, the market being addressed and product being sold. This material should be integrated with all other sources of information in reaching professional decisions about this individual. This report is confidential and intended for use by qualified professionals only. </p>
                 <br>
                 <h4 style="font-weight: bold;">Intellectual Property</h4>
-                <p>The Content and Services of {{ company }}, as well as their selection and arrangement, are protected by copyright, trademark, patent, and/or other intellectual property laws, and any unauthorized use of the Content or Services may violate such laws and these Terms of Use. Except as expressly implied in these Terms of Use, {{ company }} does not grant any express rights to use the Content and/or Services. You have agreed not to copy, republish, frame, download, transmit, modify, rent, lease, loan, sell, assign, distribute, license, sublicense, reverse engineer, or create derivative works based on the Site, its Content, or its Services or their selection and arrangement, except as expressly authorized in these Terms of Use. In addition, you have agreed not to use any data mining, robots, or similar data gathering and extraction methods in connection with the {{ company }} database.</p>
+                <p>The content and services of EdMyst Inc, as well as their selection and arrangement, are protected by copyright, trademark, patent, and/or other intellectual property laws, and any unauthorized use of the Content or Services may violate such laws and these Terms of Use. Except as expressly implied in these Terms of Use, EdMyst Inc. does not grant any express rights to use the Content and/or Services. You have agreed not to copy, republish, frame, download, transmit, modify, rent, lease, loan, sell, assign, distribute, license, sublicense, reverse engineer, or create derivative works based on the Site, its Content, or its Services or their selection and arrangement, except as expressly authorized in these Terms of Use. In addition, you have agreed not to use any data mining, robots, or similar data gathering and extraction methods in connection with the EdMyst Inc. database.</p>
             </section>
         </article>
 

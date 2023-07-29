@@ -92,7 +92,7 @@ html body article#cover section {
 }
 
 ul.toc a::after {
-  content: leader('.') target-counter(attr(href url), page);  
+  content: leader(' ') target-counter(attr(href url), page);  
 }
 
 .toc {
@@ -103,7 +103,6 @@ ul.toc a::after {
 .custom-link {
   color: rgb(1, 1, 1); 
   text-decoration: none; 
-  font-weight: bold;
   font-size: medium;
 }
 
@@ -113,12 +112,6 @@ ul.toc a::after {
     margin-top: 5mm;
     margin-bottom: 5mm;
     width: 70%;
-}
-
-.image-score-ticker img {
-    display: block;
-    width: 100%;
-    margin: auto;
 }
 
 .top-header-skills{
@@ -175,11 +168,24 @@ ul.toc a::after {
   color: #106ba8;
 }
 
-#pic {
+.horizontal-flexbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.line {
+  border: none;
+  border-top: 1px dashed black;
+  width: 100%;
+  margin-bottom: 5mm;
+}
+
+#job_fitment_pic {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 90%;
+    width: 70%;
     height: auto;
 }
 
@@ -187,6 +193,14 @@ ul.toc a::after {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 70%;
+    width: 60%;
     height: auto;
+}
+
+#bar_chart {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  height: auto;
 }

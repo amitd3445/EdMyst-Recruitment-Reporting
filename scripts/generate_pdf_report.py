@@ -1,7 +1,7 @@
 from typing import Dict, Union, List, Tuple
 import pathlib
 import json
-import os
+import math
 import datetime as dt
 from PIL import Image
 import pandas as pd
@@ -12,7 +12,9 @@ import matplotlib.colors as mcolors
 matplotlib.use("Agg")
 from matplotlib import pyplot as plt
 from jinja2 import Environment, FileSystemLoader
+import weasyprint
 
+import sys
 
 def generate_interview_report(
     payload: Dict[str, Dict[str, Union[float, int, str]]]
@@ -35,57 +37,29 @@ def generate_interview_report(
         The PDF report generated is stored in the results directory
     """
 
-    _validate_payload(payload)
     (
         dict_candidate,
         dict_job_fitment,
-        df_all_scores,
-        list_series_agent_scores,
+        df_technical_skill_scores,
+        series_video_skills,
+        df_recruiter_skill_scores,
+        list_series_recruiter_scores,
     ) = _parse_payload(payload)
+
     _generate_job_fitment_bar(dict_job_fitment)
-    _generate_gauge_charts(df_all_scores["Self"])
-    _generate_spider_plot(*list_series_agent_scores)
-    _generate_final_report(dict_candidate, df_all_scores["Self"])
+    _generate_technical_skills_bar_chart(df_technical_skill_scores)
+    _generate_colorbars_video_skills(series_video_skills)
 
+    if isinstance(df_recruiter_skill_scores, pd.Series):
+        _generate_gauge_charts_recruiter_skills(df_recruiter_skill_scores)
+    else:
+        _generate_gauge_charts_recruiter_skills(df_recruiter_skill_scores["Self"])   
+    _generate_spider_plot(*list_series_recruiter_scores)
 
-def _validate_payload(payload: Dict[str, Dict[str, Union[float, int, str]]]) -> None:
-    """
-    Data validation step to make sure that the input is of the right type
-
-    Args:
-        param1(Dict[str, Dict[str, int | str]]): The candidate's profile and assessment results
-
-    Returns:
-        None
-
-    Raises:
-        TypeError: Must receieve nested dictionaries as an argument
-    """
-    if not isinstance(payload, dict):
-        raise TypeError(
-            "Input must be nested dictionaries with values as either string, int, or float"
-        )
-
-    stack = [payload]
-    while stack:
-        current_dict = stack.pop()
-
-        for key, value in current_dict.items():
-            if not isinstance(key, str):
-                raise TypeError(
-                    "Input must be nested dictionaries with values as either string, int, or float"
-                )
-
-            if isinstance(value, dict):
-                stack.append(value)
-            elif not (
-                isinstance(value, float)
-                or isinstance(value, int)
-                or isinstance(value, str)
-            ):
-                raise TypeError(
-                    "Input must be nested dictionaries with values as either string, int, or float"
-                )
+    if isinstance(df_recruiter_skill_scores, pd.Series):
+         _generate_final_report(dict_candidate, df_recruiter_skill_scores, series_video_skills.index)
+    else:
+        _generate_final_report(dict_candidate, df_recruiter_skill_scores["Self"], series_video_skills.index)
 
 
 def _parse_payload(
@@ -100,12 +74,23 @@ def _parse_payload(
     Returns:
         Tuple[Dict[str, Union[float, str]]]: a tuple that breaks down the payload into discrete inputs for future functions
     """
-    dict_candidate = payload.pop("Candidate")
-    dict_job_fitment = payload.pop("Job Fitment")
-    payload = {key.lower(): value for key, value in payload.items()}
-    df_all_scores = pd.DataFrame(payload).transpose()
-    list_series_agent_scores = [df_all_scores[col] for col in df_all_scores.columns]
-    return (dict_candidate, dict_job_fitment, df_all_scores, list_series_agent_scores)
+    
+    dict_candidate = payload["Candidate"]
+    dict_job_fitment = payload["job_fitment"]
+    df_technical_skill_scores = pd.DataFrame(payload["technical_skills"]).transpose()
+    
+    dict_video_skills = {key: skill_dict["percentage"] for key, skill_dict in payload["video_data"]["skills"].items()}
+    series_video_skills = pd.Series(dict_video_skills, name="skills")
+
+    dict_recruiter_skills = {key.lower(): value for key, value in payload["skill_scores"].items()}
+    if any(map(lambda x: isinstance(x, dict), dict_recruiter_skills.values())):
+        df_recruiter_skill_scores = pd.DataFrame(dict_recruiter_skills).transpose()
+        list_series_recrutier_scores = [df_recruiter_skill_scores[col] for col in df_recruiter_skill_scores.columns]
+    elif any(map(lambda x: isinstance(x, int) or isinstance(x, float), dict_recruiter_skills.values())):
+        df_recruiter_skill_scores = pd.Series(dict_recruiter_skills, name="skills")
+        list_series_recrutier_scores = [df_recruiter_skill_scores]
+
+    return (dict_candidate, dict_job_fitment, df_technical_skill_scores, series_video_skills, df_recruiter_skill_scores, list_series_recrutier_scores)
 
 
 def _generate_job_fitment_bar(dict_scores: Dict[str, Union[float, int]]) -> None:
@@ -120,25 +105,20 @@ def _generate_job_fitment_bar(dict_scores: Dict[str, Union[float, int]]) -> None
         None
     """
 
-    R1, R2, score = dict_scores["R1"], dict_scores["R2"], dict_scores["S"]
+    score = dict_scores["S"]
 
     fig = plt.figure(figsize=(8, 2))
     ax = fig.add_axes([0.1, 0.35, 0.8, 0.4])
     ax2 = fig.add_axes([0.1, 0.1, 0.8, 0.25])
     ax3 = fig.add_axes([0.1, 0.7, 0.8, 0.1])
 
-    left_color = "#FCBEC1"
-    right_color = "#D9FBC8"
-    center_color = "#F4F4F4"
+    left_color = "#F6E3AE"
+    right_color = "#AEF6BD"
 
-    # Create a colormap for the left half (green to white)
-    cmap_left = mcolors.LinearSegmentedColormap.from_list(
-        "LeftCmap", [left_color, center_color]
-    )
 
     # Create a colormap for the right half (white to red)
-    cmap_right = mcolors.LinearSegmentedColormap.from_list(
-        "RightCmap", [center_color, right_color]
+    cmap_middle = mcolors.LinearSegmentedColormap.from_list(
+        "MiddleCmap", [left_color, right_color]
     )
 
     # white cmap
@@ -146,11 +126,6 @@ def _generate_job_fitment_bar(dict_scores: Dict[str, Union[float, int]]) -> None
         "WhiteCmap", ["white", "white"]
     )
 
-    # Combine the left and right colormaps
-    colors = np.vstack(
-        (cmap_left(np.linspace(0, 1, 256)), cmap_right(np.linspace(0, 1, 256)))
-    )
-    cmap_custom = mcolors.ListedColormap(colors)
 
     guage_range = np.linspace(0, 100, 512)
 
@@ -158,7 +133,7 @@ def _generate_job_fitment_bar(dict_scores: Dict[str, Union[float, int]]) -> None
 
     cbar = matplotlib.colorbar.ColorbarBase(
         ax,
-        cmap=cmap_custom,
+        cmap=cmap_middle,
         norm=norm,
         orientation="horizontal",
         boundaries=guage_range,
@@ -184,15 +159,9 @@ def _generate_job_fitment_bar(dict_scores: Dict[str, Union[float, int]]) -> None
     cbar2.outline.set_visible(False)
     cbar3.outline.set_visible(False)
 
-    # R1 to R2 grey haze
-    ax.axvspan(R1, R2, 0, 1, facecolor="#ECECEC")
-    ax2.axvspan(R1, R2, 0.85, 1, facecolor="#ECECEC")
-    ax3.axvspan(R1, R2, 0, 0.3, facecolor="#ECECEC")
-
-    # score tick
-    ax.axvspan(score - 0.5, score + 0.5, 0, 1, facecolor="#000000")
-    ax2.axvspan(score - 0.5, score + 0.5, 0.6, 1, facecolor="#000000")
-    ax3.axvspan(score - 0.5, score + 0.5, 0, 1, facecolor="#000000")
+    ax.axvspan(score - 0.5, score + 0.5, 0, 1, facecolor="#2FB4F1")
+    ax2.axvspan(score - 0.5, score + 0.5, 0.6, 1, facecolor="#2FB4F1")
+    ax3.axvspan(score - 0.5, score + 0.5, 0, 1, facecolor="#2FB4F1")
 
     path_skill_gauge_chart = (
         pathlib.Path(__file__).parent.parent / "tmp" / "job_fitment_graphic.jpg"
@@ -213,24 +182,8 @@ def _generate_job_fitment_bar(dict_scores: Dict[str, Union[float, int]]) -> None
         fontsize=10,
     )
     annotation3 = plt.annotate(
-        str(score) + "%",
+        "S",
         xy=(score / 125 + 0.1, 0.85),
-        xycoords="figure fraction",
-        ha="center",
-        fontsize=10,
-    )
-
-    annotation4 = plt.annotate(
-        "R1",
-        xy=(R1 / 125 + 0.1, 0.15),
-        xycoords="figure fraction",
-        ha="center",
-        fontsize=10,
-    )
-
-    annotation5 = plt.annotate(
-        "R2",
-        xy=(R2 / 125 + 0.1, 0.15),
         xycoords="figure fraction",
         ha="center",
         fontsize=10,
@@ -241,11 +194,126 @@ def _generate_job_fitment_bar(dict_scores: Dict[str, Union[float, int]]) -> None
     annotation.remove()
     annotation2.remove()
     annotation3.remove()
-    annotation4.remove()
-    annotation5.remove()
 
 
-def _generate_gauge_charts(series_scores: pd.Series) -> None:
+def _generate_technical_skills_bar_chart(df: pd.DataFrame) -> None:
+    """
+    Creates a bar chart that compares the individual's technical skills to the cohort
+    """
+
+    fig, ax = plt.subplots()
+
+    bar_width = 0.35
+    num_rows = df.shape[0]
+    index = range(num_rows)
+    index_for_ticks = [x + bar_width/2 for x in index]
+    df.index = df.index.str.replace(' ', '\n')
+
+
+    ax.bar(index, df['self'], bar_width, label='Self', align='center', color="#AEF6F3", edgecolor='black', linestyle='dashed')
+    ax.bar([i + bar_width for i in index], df['cohort'], bar_width, label='Cohort', align='center', color="#C5F6AE", edgecolor='black', linestyle='dashed')
+
+    ax.set_xticks(index_for_ticks)
+    ax.set_xticklabels(df.index, fontsize=8)
+    ax.legend()
+    
+    plt.rcParams['font.family'] = 'sans-serif'
+    plt.rcParams['font.sans-serif'] = 'Helvetica'
+
+    plt.rcParams['axes.edgecolor']='#333F4B'
+    plt.rcParams['axes.linewidth']=0.8
+    plt.rcParams['xtick.color']='#333F4B'
+    plt.rcParams['ytick.color']='#333F4B'
+
+    ax.spines['top'].set_visible(False)
+    ax.spines['right'].set_visible(False)
+    ax.spines['left'].set_position(('outward', 8))
+
+    ax.set_ylim(0, 10)
+
+    path_technical_skills = pathlib.Path(__file__).parent.parent / "tmp" / "technical_skills.jpg"
+    plt.savefig(path_technical_skills, format="jpg")
+
+
+def _generate_colorbars_video_skills(series_scores: pd.Series) -> None:
+    """
+    Create colorbars for each of the video skills
+    """
+
+    for skill, score in series_scores.items():
+
+        fig = plt.figure(figsize=(8, 2))
+        ax = fig.add_axes([0.1, 0.35, 0.8, 0.4])
+
+        score = math.floor(score/10)/10 + 0.05 if score < 100 else 0.95
+
+        left_color = "#FB9D9D"
+        right_color = "#BDF985"
+
+        cmap_middle = mcolors.LinearSegmentedColormap.from_list(
+            "MiddleCmap", [left_color, right_color]
+        )
+
+        guage_range = np.linspace(0, 100, 11)
+
+        norm = matplotlib.colors.Normalize(vmin=guage_range[0], vmax=guage_range[-1])
+
+        cbar = matplotlib.colorbar.ColorbarBase(
+            ax,
+            cmap=cmap_middle,
+            norm=norm,
+            orientation="horizontal",
+            boundaries=guage_range,
+        )
+
+        cbar.outline.set_visible(False)
+
+        for i in range(10, 100, 10):
+            ax.axvspan(i -0.25, i + 0.25, 0, 1, color="#FFFFFF")
+
+        ax.set_xticks([])
+
+        annotation = plt.annotate(
+            "Need \nPractice", 
+            xy=(0.1, 0.15), 
+            xycoords="figure fraction", 
+            ha="center", 
+            fontsize=12
+        )
+        annotation2 = plt.annotate(
+            "Great \nGoing",
+            xy=(0.9, 0.15),
+            xycoords="figure fraction",
+            ha="center",
+            fontsize=12,
+        )
+
+        metric_position = 0.1 + score * 0.8
+
+        annotation3 = plt.annotate(
+        "",
+        xy=(metric_position, 0.65),
+        xytext=(metric_position, 0.85),
+        xycoords="figure fraction",
+        ha="center",
+        fontsize=10,
+        arrowprops={"arrowstyle": "->", "linewidth": 2.5, "edgecolor": "black"},
+        va="center",
+        )
+
+        file_name = str(skill) + "_colorbar.jpg"
+        path_skill_gauge_chart = (
+            pathlib.Path(__file__).parent.parent / "tmp" / file_name
+        )
+
+        plt.savefig(path_skill_gauge_chart, format="jpg")
+
+        annotation.remove()
+        annotation2.remove()
+        annotation3.remove()
+
+
+def _generate_gauge_charts_recruiter_skills(series_scores: pd.Series) -> None:
     """
     Creates gauge graphs for all skills from the individual's self-assessment and save the static image to the tmp folder
 
@@ -271,7 +339,7 @@ def _generate_gauge_charts(series_scores: pd.Series) -> None:
     x_axis_tickers = [(x + 0.5) / 11 * PI for x in range(10, -1, -1)]
 
     for category in series_scores.index:
-        category_string = str(category) + ".jpeg"
+        category_string = str(category) + "_gauge.jpg"
         path_category = pathlib.Path(__file__).parent.parent / "tmp" / category_string
 
         plt.figure(figsize=(10, 10))
@@ -411,7 +479,7 @@ def _choose_skills_for_spider_plot(series_self_score: pd.Series) -> List[str]:
 
 
 def _generate_final_report(
-    dict_candidate: Dict[str, str], series_self_score: pd.Series
+    dict_candidate: Dict[str, str], series_self_score: pd.Series, list_video_skills: List[str]
 ) -> None:
     """
     Generate final report by first generating the html code and then the corresponding pdf report
@@ -419,16 +487,17 @@ def _generate_final_report(
     Args:
         param1(Dict[str, str]): a dictionary representing the candidate's profile
         param2(pd.Series): a pandas series representing the self-assessment scores
+        param3(List): a list containing all the names of the video skills
 
     Returns:
         None
     """
-    _generate_html(dict_candidate, series_self_score)
-    # _generate_pdf(dict_candidate)
+    _generate_html(dict_candidate, series_self_score, list_video_skills)
+    _generate_pdf(dict_candidate)
 
 
 def _generate_html(
-    dict_candidate: Dict[str, str], series_self_score: pd.Series
+    dict_candidate: Dict[str, str], series_recruiter_skills_score: pd.Series, list_video_skills: List[str]
 ) -> None:
     """
     Render the html file by using jinja2 and the pilot.html file to customize the html file based on the specific candidate's scores
@@ -436,12 +505,13 @@ def _generate_html(
     Args:
         param1(Dict[str, str]): a dictionary representing the candidate's profile
         param2(pd.Series): a pandas series representing the self-assessment scores
+        param3(List): a list containing all the names of the video skills
 
     Returns:
         None
     """
     list_top_skills, list_bottom_skills = _determine_top_and_bottom_skills(
-        series_self_score
+        series_recruiter_skills_score
     )
     number_top_skills, number_bottom_skills = len(list_top_skills), len(
         list_bottom_skills
@@ -461,6 +531,7 @@ def _generate_html(
         "list_bottom_skills": list_bottom_skills,
         "number_bottom_skills": number_bottom_skills,
         "dict_report_text": dict_report_text,
+        "list_video_skills" : list_video_skills,
         "dict_candidate": dict_candidate,
         "date": dt.date.today(),
     }
@@ -468,7 +539,7 @@ def _generate_html(
     rendered_template = template.render(payload)
 
     name, company = dict_candidate["name"].replace(" ", "_"), dict_candidate[
-        "company_name"
+        "company"
     ].replace(" ", "_")
     date_today_string = dt.date.today().strftime("%Y-%m-%d")
     report_filename = "_".join([name, company, date_today_string])
@@ -548,7 +619,7 @@ def _generate_pdf(dict_candidate: Dict[str, str]) -> None:
         None
     """
     name, company = dict_candidate["name"].replace(" ", "_"), dict_candidate[
-        "company_name"
+        "company"
     ].replace(" ", "_")
     date_today_string = dt.date.today().strftime("%Y-%m-%d")
     report_filename = "_".join([name, company, date_today_string])
@@ -562,64 +633,15 @@ def _generate_pdf(dict_candidate: Dict[str, str]) -> None:
         pathlib.Path(__file__).parent.parent / "results" / report_filename_pdf
     )
 
+    weasyprint.HTML(path_html_file).write_pdf(path_pdf_report)
+
+
 
 if __name__ == "__main__":
-    payload = {
-        "Candidate": {"name": "John Doe", "company_name": "COMPANY_NAME"},
-        "Job Fitment": {"R1": 40, "R2": 80, "S": 80},
-        "Achievement orientation": {"Self": 8, "Comparison": 3},
-        "Adaptability": {"Self": 6, "Comparison": 9},
-        "Attention to detail": {"Self": 2, "Comparison": 7},
-        "Big Picture Thinking": {"Self": 4, "Comparison": 5},
-        "Coaching": {"Self": 9, "Comparison": 2},
-        "Collaboration Skills": {"Self": 7, "Comparison": 6},
-        "Commercial Acumen": {"Self": 5, "Comparison": 4},
-        "Contextualization of knowledge": {"Self": 3, "Comparison": 8},
-        "Courage and risk-taking": {"Self": 1, "Comparison": 10},
-        "Creative Problem Solving": {"Self": 10, "Comparison": 1},
-        "Critical Thinking": {"Self": 4, "Comparison": 7},
-        "Dealing with uncertainty": {"Self": 7, "Comparison": 3},
-        "Developing others": {"Self": 9, "Comparison": 2},
-        "Driving change and innovation": {"Self": 6, "Comparison": 4},
-        "Empathetic": {"Self": 8, "Comparison": 3},
-        "Empowering others": {"Self": 5, "Comparison": 6},
-        "Energy, passion, and optimism": {"Self": 3, "Comparison": 9},
-        "Exploring perspectives and alternatives": {"Self": 4, "Comparison": 8},
-        "Fostering inclusiveness": {"Self": 7, "Comparison": 5},
-        "Grit and persistence": {"Self": 6, "Comparison": 7},
-        "Instilling Trust": {"Self": 9, "Comparison": 2},
-        "Learnability": {"Self": 8, "Comparison": 4},
-        "Motivating and inspiring others": {"Self": 3, "Comparison": 6},
-        "Negotiation and Persuasion": {"Self": 2, "Comparison": 9},
-        "Openness to feedback": {"Self": 5, "Comparison": 8},
-        "Organizational awareness": {"Self": 7, "Comparison": 3},
-        "Ownership and accountability": {"Self": 4, "Comparison": 6},
-        "Planning": {"Self": 6, "Comparison": 5},
-        "Positive Mindset": {"Self": 9, "Comparison": 3},
-        "Presentation Skills": {"Self": 8, "Comparison": 4},
-        "Project management": {"Self": 2, "Comparison": 7},
-        "Promoting a culture of respect": {"Self": 6, "Comparison": 8},
-        "Purpose-driven": {"Self": 9, "Comparison": 7},
-        "Resilience": {"Self": 8, "Comparison": 6},
-        "Role Modeling": {"Self": 7, "Comparison": 9},
-        "Self-confidence": {"Self": 8, "Comparison": 7},
-        "Self-control and regulation": {"Self": 7, "Comparison": 8},
-        "Self-directedness": {"Self": 6, "Comparison": 9},
-        "Self-motivation": {"Self": 9, "Comparison": 6},
-        "Speaking with conviction": {"Self": 7, "Comparison": 8},
-        "Storytelling": {"Self": 8, "Comparison": 7},
-        "Strategic Thinking": {"Self": 9, "Comparison": 6},
-        "Synthesizing messages": {"Self": 7, "Comparison": 9},
-        "Time management and prioritization": {"Self": 8, "Comparison": 7},
-        "Unconventional approach (breaking stereotypes and barriers)": {
-            "Self": 9,
-            "Comparison": 6,
-        },
-        "Understanding of the external environment": {"Self": 7, "Comparison": 8},
-        "Understanding one's emotions": {"Self": 8, "Comparison": 7},
-        "Understanding one's strengths": {"Self": 9, "Comparison": 6},
-        "Vision Alignment": {"Self": 7, "Comparison": 9},
-        "Voice, articulation, and diction": {"Self": 8, "Comparison": 7},
-    }
+    file_name = pathlib.Path(__file__).parent.parent / "data" / "sample_video_data.json"
+    with open(file_name) as file:
+        payload = json.load(file)
+    
+    payload = payload['Records'][0]["Sns"]["Message"]
 
     generate_interview_report(payload)

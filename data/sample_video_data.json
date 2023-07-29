@@ -1,0 +1,2372 @@
+{
+    "Records": [
+        {
+            "Sns": {
+                "Message": {
+                    "Candidate": {
+                        "name": "Vivek Test",
+                        "company": "EdMyst",
+                        "user_id": "2d0938d4-a0e9-4877-b408-f9b67020a825",
+                        "video_id": "439872f9-860b-4772-974e-2159c4fa2ad7",
+                        "reference_no": "VG137"
+                    },
+                    "technical_skills":{
+                        "Microsoft .NET Framework" : {
+                            "self" : 6.5,
+                            "cohort" : 7
+                        },
+                        "C#": {
+                            "self" : 5,
+                            "cohort" : 9
+                        },
+                        "Web API Development": {
+                            "self" : 3,
+                            "cohort" : 5
+                        }
+                    },
+                    "job_fitment" : {"R1": 40, "R2": 60, "S": 0},
+                    "skill_scores": {
+                        "Understanding one's emotions": 8.1,
+                        "Self-directedness": 6.5,
+                        "Self-control and regulation": 7,
+                        "Resilience": 8.5,
+                        "Purpose-driven": 7.2,
+                        "Time management and prioritization": 5.2,
+                        "Project management": 8,
+                        "Planning": 7.6,
+                        "Ownership and accountability": 6.2,
+                        "Attention to detail": 6,
+                        "Speaking with conviction": 7.2,
+                        "Strategic Thinking": 7.1,
+                        "Exploring perspectives and alternatives": 7.8,
+                        "Critical Thinking": 7.8,
+                        "Big Picture Thinking": 7.5,
+                        "Unconventional approach (breaking stereotypes and barriers)": 8.1,
+                        "Energy, passion and optimism": 8.5,
+                        "Driving change and innovation": 7,
+                        "Dealing with uncertainty": 8.3,
+                        "Courage and risk-taking": 7,
+                        "Adaptability": 8.4,
+                        "Role Modeling": 7.2,
+                        "Motivating and inspiring others": 7.2,
+                        "Empowering others": 7.6,
+                        "Developing others": 8.4,
+                        "Coaching": 7.1,
+                        "Promoting culture of respect": 7.8,
+                        "Fostering inclusiveness": 7.4,
+                        "Openness to feedback": 7.2,
+                        "Instilling Trust": 7.2,
+                        "Empathetic": 7.2,
+                        "Collaboration Skills": 7.5,
+                        "Vision Alignment": 6.8,
+                        "Organizational awareness": 8,
+                        "Contextualization of knowledge": 7.3
+                    },
+                    "user_id": "2d0938d4-a0e9-4877-b408-f9b67020a825",
+                    "video_id": "439872f9-860b-4772-974e-2159c4fa2ad7",
+                    "video_data": {
+                        "_id": "439872f9-860b-4772-974e-2159c4fa2ad7",
+                        "name": "Vivek Test",
+                        "email": "rohit@edmyst.com",
+                        "reference_no": "VG137",
+                        "company_name": "EdMyst",
+                        "date": "Jul 07, 2023",
+                        "assessment_type": "leadership_assessment",
+                        "time": "18:56:21",
+                        "video_token": "2df6c519-9e30-48bc-9aa6-998f3a7883bb",
+                        "video_token_expiration": 20230729000000,
+                        "use_case": "interpersonal_relationship",
+                        "creation_time": 20230707184557,
+                        "sentiment": {
+                            "assessment": "high",
+                            "definition": "-1 = negative sentiment, +1 = positive sentiment as per roberta-large-english model",
+                            "measured": {
+                                "average": 0.9968253374099731,
+                                "min": 0.9968253374099731,
+                                "max": 0.9968253374099731
+                            },
+                            "inference": {
+                                "assessment": "high",
+                                "result": "Your overall sentiment analysis is positive based on your video.",
+                                "average": 0.9968253374099731,
+                                "low": 0,
+                                "count": 0.9968253374099731,
+                                "min": 0.9968253374099731,
+                                "recommendation": "Continue using the positive words intentionally and more often as they are associated with positive feelings of happiness, joy, and excitement. In addition, it may undoubtedly evoke positive emotions in the listeners. ",
+                                "message": "We detected positive sentiments for most the times.",
+                                "high": 0.2,
+                                "max": 0.9968253374099731
+                            },
+                            "recommended": {
+                                "average": 0,
+                                "min": 0,
+                                "max": 0.2
+                            }
+                        },
+                        "looking_at_camera": {
+                            "assessment": "optimal",
+                            "average_percentage": 100,
+                            "result": "You have maintained optimal eye contact in the video.",
+                            "inference": "You got it! Great job! You have maintained 100% eye contact. Sustained and focused eye contact conveys confidence and conviction during a presentation.",
+                            "recommendation": "Maintaining positive eye contact with the audience, around 50-70% of the time of your presentation, while not staring at only certain members in the audience creates a confident and assertive frame about you. When you maintain eye contact with the audience, they are more likely to look at you, listen to you, and buy your point of view and ideas.",
+                            "data": [
+                                {
+                                    "value": 0.8814374953508377,
+                                    "millisec": 0
+                                },
+                                {
+                                    "value": 0.9193240851163864,
+                                    "millisec": 2000
+                                },
+                                {
+                                    "value": 0.9393813982605934,
+                                    "millisec": 4000
+                                },
+                                {
+                                    "value": 0.9432896003127098,
+                                    "millisec": 6000
+                                },
+                                {
+                                    "value": 0.892342746257782,
+                                    "millisec": 8000
+                                },
+                                {
+                                    "value": 0.8919159471988678,
+                                    "millisec": 10000
+                                },
+                                {
+                                    "value": 0.8997246250510216,
+                                    "millisec": 12000
+                                },
+                                {
+                                    "value": 0.9038708694279194,
+                                    "millisec": 14000
+                                },
+                                {
+                                    "value": 0.8959815129637718,
+                                    "millisec": 16000
+                                },
+                                {
+                                    "value": 0.8837826550006866,
+                                    "millisec": 18000
+                                },
+                                {
+                                    "value": 0.9166963063180447,
+                                    "millisec": 20000
+                                },
+                                {
+                                    "value": 0.8468049317598343,
+                                    "millisec": 22000
+                                },
+                                {
+                                    "value": 0.9150700755417347,
+                                    "millisec": 24000
+                                },
+                                {
+                                    "value": 0.8334644082933664,
+                                    "millisec": 26000
+                                },
+                                {
+                                    "value": 0.9168987944722176,
+                                    "millisec": 28000
+                                },
+                                {
+                                    "value": 0.9393727034330368,
+                                    "millisec": 30000
+                                },
+                                {
+                                    "value": 0.8754361234605312,
+                                    "millisec": 32000
+                                }
+                            ]
+                        },
+                        "text_q_data": {
+                            "user_id": "2d0938d4-a0e9-4877-b408-f9b67020a825",
+                            "filtered_word_data": [
+                                {
+                                    "sec": 3.289,
+                                    "type": "pronunciation",
+                                    "word": "This"
+                                },
+                                {
+                                    "sec": 3.549,
+                                    "type": "pronunciation",
+                                    "word": "is"
+                                },
+                                {
+                                    "sec": 3.69,
+                                    "type": "pronunciation",
+                                    "word": "a"
+                                },
+                                {
+                                    "sec": 3.71,
+                                    "type": "pronunciation",
+                                    "word": "test"
+                                },
+                                {
+                                    "sec": 4.03,
+                                    "type": "pronunciation",
+                                    "word": "video"
+                                },
+                                {
+                                    "sec": 5.559,
+                                    "type": "pronunciation",
+                                    "word": "for"
+                                },
+                                {
+                                    "sec": 5.84,
+                                    "type": "pronunciation",
+                                    "word": "leadership"
+                                },
+                                {
+                                    "sec": 6.26,
+                                    "type": "pronunciation",
+                                    "word": "assessment"
+                                },
+                                {
+                                    "sec": 7.21,
+                                    "type": "pronunciation",
+                                    "word": "Today"
+                                },
+                                {
+                                    "sec": 7.679,
+                                    "type": "pronunciation",
+                                    "word": "is"
+                                },
+                                {
+                                    "sec": 8.17,
+                                    "type": "pronunciation",
+                                    "word": "July"
+                                },
+                                {
+                                    "sec": 8.609,
+                                    "type": "pronunciation",
+                                    "word": "7th"
+                                },
+                                {
+                                    "sec": 9.1,
+                                    "type": "pronunciation",
+                                    "word": "2023"
+                                },
+                                {
+                                    "sec": 10.489,
+                                    "type": "pronunciation",
+                                    "word": "It's"
+                                },
+                                {
+                                    "sec": 10.729,
+                                    "type": "pronunciation",
+                                    "word": "around"
+                                },
+                                {
+                                    "sec": 11.079,
+                                    "type": "pronunciation",
+                                    "word": "2:45"
+                                },
+                                {
+                                    "sec": 12.1,
+                                    "type": "pronunciation",
+                                    "word": "p.m."
+                                },
+                                {
+                                    "sec": 12.659,
+                                    "type": "pronunciation",
+                                    "word": "Eastern"
+                                },
+                                {
+                                    "sec": 13.1,
+                                    "type": "pronunciation",
+                                    "word": "time"
+                                },
+                                {
+                                    "sec": 14.609,
+                                    "type": "pronunciation",
+                                    "word": "and"
+                                },
+                                {
+                                    "sec": 14.829,
+                                    "type": "pronunciation",
+                                    "word": "I'm"
+                                },
+                                {
+                                    "sec": 14.96,
+                                    "type": "pronunciation",
+                                    "word": "trying"
+                                },
+                                {
+                                    "sec": 15.279,
+                                    "type": "pronunciation",
+                                    "word": "out"
+                                },
+                                {
+                                    "sec": 15.43,
+                                    "type": "pronunciation",
+                                    "word": "this"
+                                },
+                                {
+                                    "sec": 15.63,
+                                    "type": "pronunciation",
+                                    "word": "leadership"
+                                },
+                                {
+                                    "sec": 16.11,
+                                    "type": "pronunciation",
+                                    "word": "assessment"
+                                },
+                                {
+                                    "sec": 16.709,
+                                    "type": "pronunciation",
+                                    "word": "for"
+                                },
+                                {
+                                    "sec": 16.92,
+                                    "type": "pronunciation",
+                                    "word": "a"
+                                },
+                                {
+                                    "sec": 16.94,
+                                    "type": "pronunciation",
+                                    "word": "band"
+                                },
+                                {
+                                    "sec": 17.69,
+                                    "type": "pronunciation",
+                                    "word": "C"
+                                },
+                                {
+                                    "sec": 18.02,
+                                    "type": "pronunciation",
+                                    "word": "position"
+                                },
+                                {
+                                    "sec": 19.26,
+                                    "type": "pronunciation",
+                                    "word": "title"
+                                },
+                                {
+                                    "sec": 19.739,
+                                    "type": "pronunciation",
+                                    "word": "at"
+                                },
+                                {
+                                    "sec": 19.86,
+                                    "type": "pronunciation",
+                                    "word": "VP"
+                                },
+                                {
+                                    "sec": 22.829,
+                                    "type": "pronunciation",
+                                    "word": "The"
+                                },
+                                {
+                                    "sec": 23.03,
+                                    "type": "pronunciation",
+                                    "word": "end"
+                                },
+                                {
+                                    "sec": 23.219,
+                                    "type": "pronunciation",
+                                    "word": "date"
+                                },
+                                {
+                                    "sec": 23.44,
+                                    "type": "pronunciation",
+                                    "word": "is"
+                                },
+                                {
+                                    "sec": 23.659,
+                                    "type": "pronunciation",
+                                    "word": "I"
+                                },
+                                {
+                                    "sec": 23.68,
+                                    "type": "pronunciation",
+                                    "word": "think"
+                                },
+                                {
+                                    "sec": 24.04,
+                                    "type": "pronunciation",
+                                    "word": "July"
+                                },
+                                {
+                                    "sec": 24.329,
+                                    "type": "pronunciation",
+                                    "word": "29th"
+                                },
+                                {
+                                    "sec": 25.85,
+                                    "type": "pronunciation",
+                                    "word": "But"
+                                },
+                                {
+                                    "sec": 26.139,
+                                    "type": "pronunciation",
+                                    "word": "let"
+                                },
+                                {
+                                    "sec": 26.28,
+                                    "type": "pronunciation",
+                                    "word": "us"
+                                },
+                                {
+                                    "sec": 26.329,
+                                    "type": "pronunciation",
+                                    "word": "see"
+                                },
+                                {
+                                    "sec": 26.54,
+                                    "type": "pronunciation",
+                                    "word": "how"
+                                },
+                                {
+                                    "sec": 26.709,
+                                    "type": "pronunciation",
+                                    "word": "it"
+                                },
+                                {
+                                    "sec": 26.78,
+                                    "type": "pronunciation",
+                                    "word": "goes"
+                                },
+                                {
+                                    "sec": 27.37,
+                                    "type": "pronunciation",
+                                    "word": "I'm"
+                                },
+                                {
+                                    "sec": 27.569,
+                                    "type": "pronunciation",
+                                    "word": "trying"
+                                },
+                                {
+                                    "sec": 27.819,
+                                    "type": "pronunciation",
+                                    "word": "to"
+                                },
+                                {
+                                    "sec": 27.899,
+                                    "type": "pronunciation",
+                                    "word": "maintain"
+                                },
+                                {
+                                    "sec": 28.309,
+                                    "type": "pronunciation",
+                                    "word": "eye"
+                                },
+                                {
+                                    "sec": 28.36,
+                                    "type": "pronunciation",
+                                    "word": "contact"
+                                },
+                                {
+                                    "sec": 28.979,
+                                    "type": "pronunciation",
+                                    "word": "and"
+                                },
+                                {
+                                    "sec": 29.069,
+                                    "type": "pronunciation",
+                                    "word": "now"
+                                },
+                                {
+                                    "sec": 29.19,
+                                    "type": "pronunciation",
+                                    "word": "I'm"
+                                },
+                                {
+                                    "sec": 29.35,
+                                    "type": "pronunciation",
+                                    "word": "smiling"
+                                }
+                            ],
+                            "filtered_data": [
+                                {
+                                    "text": "This is a test video for leadership assessment. Today is July 7th 2023. It's around 2:45 p.m. Eastern time and I'm trying out this leadership assessment for a band C position title at VP. The end date is I think July 29th. But let us see how it goes. I'm trying to maintain eye contact and now I'm smiling.",
+                                    "start_time": 0,
+                                    "end_time": 120
+                                }
+                            ],
+                            "video_id": "439872f9-860b-4772-974e-2159c4fa2ad7",
+                            "word_data": [
+                                {
+                                    "sec": 3.289,
+                                    "type": "pronunciation",
+                                    "word": "This"
+                                },
+                                {
+                                    "sec": 3.549,
+                                    "type": "pronunciation",
+                                    "word": "is"
+                                },
+                                {
+                                    "sec": 3.69,
+                                    "type": "pronunciation",
+                                    "word": "a"
+                                },
+                                {
+                                    "sec": 3.71,
+                                    "type": "pronunciation",
+                                    "word": "test"
+                                },
+                                {
+                                    "sec": 4.03,
+                                    "type": "pronunciation",
+                                    "word": "video"
+                                },
+                                {
+                                    "sec": 5.559,
+                                    "type": "pronunciation",
+                                    "word": "for"
+                                },
+                                {
+                                    "sec": 5.84,
+                                    "type": "pronunciation",
+                                    "word": "leadership"
+                                },
+                                {
+                                    "sec": 6.26,
+                                    "type": "pronunciation",
+                                    "word": "assessment"
+                                },
+                                {
+                                    "sec": 7.21,
+                                    "type": "pronunciation",
+                                    "word": "Today"
+                                },
+                                {
+                                    "sec": 7.679,
+                                    "type": "pronunciation",
+                                    "word": "is"
+                                },
+                                {
+                                    "sec": 8.17,
+                                    "type": "pronunciation",
+                                    "word": "July"
+                                },
+                                {
+                                    "sec": 8.609,
+                                    "type": "pronunciation",
+                                    "word": "7th"
+                                },
+                                {
+                                    "sec": 9.1,
+                                    "type": "pronunciation",
+                                    "word": "2023"
+                                },
+                                {
+                                    "sec": 10.489,
+                                    "type": "pronunciation",
+                                    "word": "It's"
+                                },
+                                {
+                                    "sec": 10.729,
+                                    "type": "pronunciation",
+                                    "word": "around"
+                                },
+                                {
+                                    "sec": 11.079,
+                                    "type": "pronunciation",
+                                    "word": "2:45"
+                                },
+                                {
+                                    "sec": 12.1,
+                                    "type": "pronunciation",
+                                    "word": "p.m."
+                                },
+                                {
+                                    "sec": 12.659,
+                                    "type": "pronunciation",
+                                    "word": "Eastern"
+                                },
+                                {
+                                    "sec": 13.1,
+                                    "type": "pronunciation",
+                                    "word": "time"
+                                },
+                                {
+                                    "sec": 14.609,
+                                    "type": "pronunciation",
+                                    "word": "and"
+                                },
+                                {
+                                    "sec": 14.829,
+                                    "type": "pronunciation",
+                                    "word": "I'm"
+                                },
+                                {
+                                    "sec": 14.96,
+                                    "type": "pronunciation",
+                                    "word": "trying"
+                                },
+                                {
+                                    "sec": 15.279,
+                                    "type": "pronunciation",
+                                    "word": "out"
+                                },
+                                {
+                                    "sec": 15.43,
+                                    "type": "pronunciation",
+                                    "word": "this"
+                                },
+                                {
+                                    "sec": 15.63,
+                                    "type": "pronunciation",
+                                    "word": "leadership"
+                                },
+                                {
+                                    "sec": 16.11,
+                                    "type": "pronunciation",
+                                    "word": "assessment"
+                                },
+                                {
+                                    "sec": 16.709,
+                                    "type": "pronunciation",
+                                    "word": "for"
+                                },
+                                {
+                                    "sec": 16.92,
+                                    "type": "pronunciation",
+                                    "word": "a"
+                                },
+                                {
+                                    "sec": 16.94,
+                                    "type": "pronunciation",
+                                    "word": "band"
+                                },
+                                {
+                                    "sec": 17.69,
+                                    "type": "pronunciation",
+                                    "word": "C"
+                                },
+                                {
+                                    "sec": 18.02,
+                                    "type": "pronunciation",
+                                    "word": "position"
+                                },
+                                {
+                                    "sec": 19.26,
+                                    "type": "pronunciation",
+                                    "word": "title"
+                                },
+                                {
+                                    "sec": 19.739,
+                                    "type": "pronunciation",
+                                    "word": "at"
+                                },
+                                {
+                                    "sec": 19.86,
+                                    "type": "pronunciation",
+                                    "word": "VP"
+                                },
+                                {
+                                    "sec": 22.829,
+                                    "type": "pronunciation",
+                                    "word": "The"
+                                },
+                                {
+                                    "sec": 23.03,
+                                    "type": "pronunciation",
+                                    "word": "end"
+                                },
+                                {
+                                    "sec": 23.219,
+                                    "type": "pronunciation",
+                                    "word": "date"
+                                },
+                                {
+                                    "sec": 23.44,
+                                    "type": "pronunciation",
+                                    "word": "is"
+                                },
+                                {
+                                    "sec": 23.659,
+                                    "type": "pronunciation",
+                                    "word": "I"
+                                },
+                                {
+                                    "sec": 23.68,
+                                    "type": "pronunciation",
+                                    "word": "think"
+                                },
+                                {
+                                    "sec": 24.04,
+                                    "type": "pronunciation",
+                                    "word": "July"
+                                },
+                                {
+                                    "sec": 24.329,
+                                    "type": "pronunciation",
+                                    "word": "29th"
+                                },
+                                {
+                                    "sec": 25.85,
+                                    "type": "pronunciation",
+                                    "word": "But"
+                                },
+                                {
+                                    "sec": 26.139,
+                                    "type": "pronunciation",
+                                    "word": "let"
+                                },
+                                {
+                                    "sec": 26.28,
+                                    "type": "pronunciation",
+                                    "word": "us"
+                                },
+                                {
+                                    "sec": 26.329,
+                                    "type": "pronunciation",
+                                    "word": "see"
+                                },
+                                {
+                                    "sec": 26.54,
+                                    "type": "pronunciation",
+                                    "word": "how"
+                                },
+                                {
+                                    "sec": 26.709,
+                                    "type": "pronunciation",
+                                    "word": "it"
+                                },
+                                {
+                                    "sec": 26.78,
+                                    "type": "pronunciation",
+                                    "word": "goes"
+                                },
+                                {
+                                    "sec": 27.37,
+                                    "type": "pronunciation",
+                                    "word": "I'm"
+                                },
+                                {
+                                    "sec": 27.569,
+                                    "type": "pronunciation",
+                                    "word": "trying"
+                                },
+                                {
+                                    "sec": 27.819,
+                                    "type": "pronunciation",
+                                    "word": "to"
+                                },
+                                {
+                                    "sec": 27.899,
+                                    "type": "pronunciation",
+                                    "word": "maintain"
+                                },
+                                {
+                                    "sec": 28.309,
+                                    "type": "pronunciation",
+                                    "word": "eye"
+                                },
+                                {
+                                    "sec": 28.36,
+                                    "type": "pronunciation",
+                                    "word": "contact"
+                                },
+                                {
+                                    "sec": 28.979,
+                                    "type": "pronunciation",
+                                    "word": "and"
+                                },
+                                {
+                                    "sec": 29.069,
+                                    "type": "pronunciation",
+                                    "word": "now"
+                                },
+                                {
+                                    "sec": 29.19,
+                                    "type": "pronunciation",
+                                    "word": "I'm"
+                                },
+                                {
+                                    "sec": 29.35,
+                                    "type": "pronunciation",
+                                    "word": "smiling"
+                                }
+                            ],
+                            "data": [
+                                {
+                                    "text": "This is a test video for leadership assessment. Today is July 7th 2023. It's around 2:45 p.m. Eastern time and I'm trying out this leadership assessment for a band C position title at VP. The end date is I think July 29th. But let us see how it goes. I'm trying to maintain eye contact and now I'm smiling.",
+                                    "start_time": 0,
+                                    "end_time": 120
+                                }
+                            ]
+                        },
+                        "thumbnail_url": "https://storage.googleapis.com/video_thumbnails/439872f9-860b-4772-974e-2159c4fa2ad7.jpeg",
+                        "behavioral_score": 6.165,
+                        "smiling": {
+                            "assessment": "optimal",
+                            "average_percentage": 18,
+                            "result": "You have smiled 18% of the times in the video.",
+                            "inference": "In 34 second(s) of your recording, you smiled for 6 second(s).",
+                            "recommendation": "Smile occasionally if the content requires you to smile. Smile has enormous power to diffuse tense situations, smoothen conversations, raise the level of teamwork, and communicate friendliness. In addition, a genuine smile conveys pleasant emotions such as happiness, acceptance, and appreciation.",
+                            "data": [
+                                {
+                                    "value": 0.0999293587738066,
+                                    "millisec": 0
+                                },
+                                {
+                                    "value": 0.3436404336243868,
+                                    "millisec": 2000
+                                },
+                                {
+                                    "value": 0.05882035056129098,
+                                    "millisec": 4000
+                                },
+                                {
+                                    "value": 0.051807294017635286,
+                                    "millisec": 6000
+                                },
+                                {
+                                    "value": 0.056348818936385214,
+                                    "millisec": 8000
+                                },
+                                {
+                                    "value": 0.03518968162825331,
+                                    "millisec": 10000
+                                },
+                                {
+                                    "value": 0.07359610928688198,
+                                    "millisec": 12000
+                                },
+                                {
+                                    "value": 0.030666899983771145,
+                                    "millisec": 14000
+                                },
+                                {
+                                    "value": 0.03257938491879031,
+                                    "millisec": 16000
+                                },
+                                {
+                                    "value": 0.03233989712316543,
+                                    "millisec": 18000
+                                },
+                                {
+                                    "value": 0.03388679900672287,
+                                    "millisec": 20000
+                                },
+                                {
+                                    "value": 0.05459338682703674,
+                                    "millisec": 22000
+                                },
+                                {
+                                    "value": 0.05895753623917699,
+                                    "millisec": 24000
+                                },
+                                {
+                                    "value": 0.03130923997377977,
+                                    "millisec": 26000
+                                },
+                                {
+                                    "value": 0.7365947905927896,
+                                    "millisec": 28000
+                                },
+                                {
+                                    "value": 0.9674545973539352,
+                                    "millisec": 30000
+                                },
+                                {
+                                    "value": 0.6447334207477979,
+                                    "millisec": 32000
+                                }
+                            ]
+                        },
+                        "filler_words": {
+                            "assessment": "optimal",
+                            "analysis": "You seem to be focused on your message and know how to keep the listeners engaged. You come across as a professional, prepared, and impactful communicator. ",
+                            "result": "You have used 0 filler word(s) in your recording.",
+                            "total_words": 0,
+                            "recommendation": "Continue practicing! Using too many fillers can distract your audience from the message and completely change their perception of you, making you seem less professional, unprepared, and less contextual. If a person uses more than two fillers every two minutes, they are likely to distract the listener. When you feel flustered while speaking, do not say anything instead of using a filler word. Videotape your speech and identify your crutch words. Be aware of their usage when you talk by consciously focusing on not using them.",
+                            "data": []
+                        },
+                        "skills": {
+                            "positive_mindset": {
+                                "msg": "Your choice of positive language and an equally positive body language highlight a positive mindset in this video. Maintaining these qualities will help you create a positive impression on your audience. Kudos!",
+                                "assessments": {
+                                    "sentiment": "high",
+                                    "smiling": "optimal",
+                                    "looking_at_camera": "optimal",
+                                    "repeated_words": "optimal"
+                                },
+                                "percentage": 75
+                            },
+                            "speaking_with_conviction": {
+                                "msg": "Gather information about the discussion you are likely to get involved in.. Practice by recording and rehearsing your responses for the relevant questions to become comfortable with the content. Your ease in delivering the content will also make it easier for your to convince your audience.Increase your pace and vary it occasionally. Reduce your speech rate only when emphasizing a key point. Use pauses to emphasize key thoughts.",
+                                "assessments": {
+                                    "sentiment": "high",
+                                    "pitch_data": "optimal",
+                                    "filler_words": "optimal",
+                                    "smiling": "optimal",
+                                    "power_db": "optimal",
+                                    "praat_output": "low",
+                                    "speech_rate": "low"
+                                },
+                                "percentage": 71
+                            },
+                            "resilience": {
+                                "msg": "Keep it up! Maintain such balanced composure that includes your pauses and body language to convey your message effectively.",
+                                "assessments": {
+                                    "pitch_data": "optimal",
+                                    "filler_words": "optimal",
+                                    "smiling": "optimal",
+                                    "power_db": "optimal",
+                                    "praat_output": "low"
+                                },
+                                "percentage": 80
+                            },
+                            "confidence": {
+                                "msg": "Practice more so that you are clear on what you want to express or present. Practice the critical  points for discussion for few times before the discussion Reduce your speech rate only when emphasizing on a key point. You appear more confident when you vary your pace based on the content.Slow down by breathing deeply. Gather your thoughts before you speak. Pauses are critical for conversation, and they make you sound confident, natural, and authentic. But use pauses only to appropriately emphasize on a word or phrase.Maintain eye contact especially when responding to the person who is asking the question.You are sure to rock the floor!!",
+                                "assessments": {
+                                    "pitch_data": "optimal",
+                                    "filler_words": "optimal",
+                                    "looking_at_camera": "optimal",
+                                    "power_db": "optimal",
+                                    "praat_output": "low",
+                                    "speech_rate": "low"
+                                },
+                                "percentage": 50
+                            },
+                            "voice_articulation_diction": {
+                                "msg": "Practice more to ensure that you are able to articulate your words and express your thoughts in an effective manner. Good diction ensures that spoken words are clear by using the right pronunciation, tone and enunciation. By improving your diction, you can increase the quality of your speech, which makes it easier for others to understand and engage with your message.Use pauses only to emphasize on a word. If you want to assert on a phrase or a thought, listen attentively to the speaker , pause and then respond. ",
+                                "assessments": {
+                                    "pitch_data": "optimal",
+                                    "filler_words": "optimal",
+                                    "speech_rate": "low",
+                                    "power_db": "optimal",
+                                    "praat_output": "low",
+                                    "repeated_words": "optimal"
+                                },
+                                "percentage": 67
+                            },
+                            "conciseness": {
+                                "msg": "Put together a list of discussion topics you are likely to be involved in, then write a simple, bare-bones outline for your response to each one. Think “talking points,” not full sentences, otherwise you will end up sounding like you are reciting a script. When posed with questions, practice giving answers that are actually too brief, followed by a question, such as: “Would you like me to go into more detail?”Increase your pace and vary it occasionally. Reduce your speech rate only when emphasizing on a key point. Use pauses only to emphasize on a word.",
+                                "assessments": {
+                                    "filler_words": "optimal",
+                                    "speech_rate": "low",
+                                    "praat_output": "low",
+                                    "repeated_words": "optimal"
+                                },
+                                "percentage": 50
+                            }
+                        },
+                        "repeated_words": {
+                            "assessment": "optimal",
+                            "result": "You have not used any repeated words",
+                            "total_words": 0,
+                            "analysis": "You have not repeated any of the words in your video. It reduces or takes away redundancy if the word(s) is not explaining any technical information or is not a jargon.",
+                            "data": []
+                        },
+                        "word_data": [
+                            {
+                                "sec": 3.289,
+                                "type": "pronunciation",
+                                "word": "This"
+                            },
+                            {
+                                "sec": 3.549,
+                                "type": "pronunciation",
+                                "word": "is"
+                            },
+                            {
+                                "sec": 3.69,
+                                "type": "pronunciation",
+                                "word": "a"
+                            },
+                            {
+                                "sec": 3.71,
+                                "type": "pronunciation",
+                                "word": "test"
+                            },
+                            {
+                                "sec": 4.03,
+                                "type": "pronunciation",
+                                "word": "video"
+                            },
+                            {
+                                "sec": 5.559,
+                                "type": "pronunciation",
+                                "word": "for"
+                            },
+                            {
+                                "sec": 5.84,
+                                "type": "pronunciation",
+                                "word": "leadership"
+                            },
+                            {
+                                "sec": 6.26,
+                                "type": "pronunciation",
+                                "word": "assessment"
+                            },
+                            {
+                                "sec": 7.21,
+                                "type": "pronunciation",
+                                "word": "Today"
+                            },
+                            {
+                                "sec": 7.679,
+                                "type": "pronunciation",
+                                "word": "is"
+                            },
+                            {
+                                "sec": 8.17,
+                                "type": "pronunciation",
+                                "word": "July"
+                            },
+                            {
+                                "sec": 8.609,
+                                "type": "pronunciation",
+                                "word": "7th"
+                            },
+                            {
+                                "sec": 9.1,
+                                "type": "pronunciation",
+                                "word": "2023"
+                            },
+                            {
+                                "sec": 10.489,
+                                "type": "pronunciation",
+                                "word": "It's"
+                            },
+                            {
+                                "sec": 10.729,
+                                "type": "pronunciation",
+                                "word": "around"
+                            },
+                            {
+                                "sec": 11.079,
+                                "type": "pronunciation",
+                                "word": "2:45"
+                            },
+                            {
+                                "sec": 12.1,
+                                "type": "pronunciation",
+                                "word": "p.m."
+                            },
+                            {
+                                "sec": 12.659,
+                                "type": "pronunciation",
+                                "word": "Eastern"
+                            },
+                            {
+                                "sec": 13.1,
+                                "type": "pronunciation",
+                                "word": "time"
+                            },
+                            {
+                                "sec": 14.609,
+                                "type": "pronunciation",
+                                "word": "and"
+                            },
+                            {
+                                "sec": 14.829,
+                                "type": "pronunciation",
+                                "word": "I'm"
+                            },
+                            {
+                                "sec": 14.96,
+                                "type": "pronunciation",
+                                "word": "trying"
+                            },
+                            {
+                                "sec": 15.279,
+                                "type": "pronunciation",
+                                "word": "out"
+                            },
+                            {
+                                "sec": 15.43,
+                                "type": "pronunciation",
+                                "word": "this"
+                            },
+                            {
+                                "sec": 15.63,
+                                "type": "pronunciation",
+                                "word": "leadership"
+                            },
+                            {
+                                "sec": 16.11,
+                                "type": "pronunciation",
+                                "word": "assessment"
+                            },
+                            {
+                                "sec": 16.709,
+                                "type": "pronunciation",
+                                "word": "for"
+                            },
+                            {
+                                "sec": 16.92,
+                                "type": "pronunciation",
+                                "word": "a"
+                            },
+                            {
+                                "sec": 16.94,
+                                "type": "pronunciation",
+                                "word": "band"
+                            },
+                            {
+                                "sec": 17.69,
+                                "type": "pronunciation",
+                                "word": "C"
+                            },
+                            {
+                                "sec": 18.02,
+                                "type": "pronunciation",
+                                "word": "position"
+                            },
+                            {
+                                "sec": 19.26,
+                                "type": "pronunciation",
+                                "word": "title"
+                            },
+                            {
+                                "sec": 19.739,
+                                "type": "pronunciation",
+                                "word": "at"
+                            },
+                            {
+                                "sec": 19.86,
+                                "type": "pronunciation",
+                                "word": "VP"
+                            },
+                            {
+                                "sec": 22.829,
+                                "type": "pronunciation",
+                                "word": "The"
+                            },
+                            {
+                                "sec": 23.03,
+                                "type": "pronunciation",
+                                "word": "end"
+                            },
+                            {
+                                "sec": 23.219,
+                                "type": "pronunciation",
+                                "word": "date"
+                            },
+                            {
+                                "sec": 23.44,
+                                "type": "pronunciation",
+                                "word": "is"
+                            },
+                            {
+                                "sec": 23.659,
+                                "type": "pronunciation",
+                                "word": "I"
+                            },
+                            {
+                                "sec": 23.68,
+                                "type": "pronunciation",
+                                "word": "think"
+                            },
+                            {
+                                "sec": 24.04,
+                                "type": "pronunciation",
+                                "word": "July"
+                            },
+                            {
+                                "sec": 24.329,
+                                "type": "pronunciation",
+                                "word": "29th"
+                            },
+                            {
+                                "sec": 25.85,
+                                "type": "pronunciation",
+                                "word": "But"
+                            },
+                            {
+                                "sec": 26.139,
+                                "type": "pronunciation",
+                                "word": "let"
+                            },
+                            {
+                                "sec": 26.28,
+                                "type": "pronunciation",
+                                "word": "us"
+                            },
+                            {
+                                "sec": 26.329,
+                                "type": "pronunciation",
+                                "word": "see"
+                            },
+                            {
+                                "sec": 26.54,
+                                "type": "pronunciation",
+                                "word": "how"
+                            },
+                            {
+                                "sec": 26.709,
+                                "type": "pronunciation",
+                                "word": "it"
+                            },
+                            {
+                                "sec": 26.78,
+                                "type": "pronunciation",
+                                "word": "goes"
+                            },
+                            {
+                                "sec": 27.37,
+                                "type": "pronunciation",
+                                "word": "I'm"
+                            },
+                            {
+                                "sec": 27.569,
+                                "type": "pronunciation",
+                                "word": "trying"
+                            },
+                            {
+                                "sec": 27.819,
+                                "type": "pronunciation",
+                                "word": "to"
+                            },
+                            {
+                                "sec": 27.899,
+                                "type": "pronunciation",
+                                "word": "maintain"
+                            },
+                            {
+                                "sec": 28.309,
+                                "type": "pronunciation",
+                                "word": "eye"
+                            },
+                            {
+                                "sec": 28.36,
+                                "type": "pronunciation",
+                                "word": "contact"
+                            },
+                            {
+                                "sec": 28.979,
+                                "type": "pronunciation",
+                                "word": "and"
+                            },
+                            {
+                                "sec": 29.069,
+                                "type": "pronunciation",
+                                "word": "now"
+                            },
+                            {
+                                "sec": 29.19,
+                                "type": "pronunciation",
+                                "word": "I'm"
+                            },
+                            {
+                                "sec": 29.35,
+                                "type": "pronunciation",
+                                "word": "smiling"
+                            }
+                        ],
+                        "transcript": [
+                            {
+                                "text": "This is a test video for leadership assessment. Today is July 7th 2023. It's around 2:45 p.m. Eastern time and I'm trying out this leadership assessment for a band C position title at VP. The end date is I think July 29th. But let us see how it goes. I'm trying to maintain eye contact and now I'm smiling.",
+                                "start_time": 0,
+                                "end_time": 120
+                            }
+                        ],
+                        "video_length": 34.25,
+                        "video_gcs_uri": "gs://edy-videointelligence-api/439872f9-860b-4772-974e-2159c4fa2ad7.mp4",
+                        "pitch_data": {
+                            "assessment": "optimal",
+                            "inference": {
+                                "detailed_analysis": "Your pitch was low for 45%  of the times, optimal for 26% of the times and high for 30% of the times. There seems to be a rising/ falling/dipping/ peaking (dynamic) intonation in your voice. You have been speaking at an optimal pitch most of the times. \r\nGreat job! When you speak at an optimal pitch, you come across as an empathetic and confident. With an appropriate intonation, you are able to convey the intended meaning to the listeners. \r\n",
+                                "recommendation": "You can continue consciously using different patterns of pitch to convey different meanings to the listener. Avoid monotony, speaking with one pitch tone or little variety in pitch. Make sure to vary the speech as you speak to show emphasis and change in meaning. Practice saying sentences with different intonation patterns to change the meaning. For example, if you make a statement with falling intonation at the end, you can turn it into a question by raising the intonation at the end. Try for example, “See what I mean,” and “See what I mean? “"
+                            },
+                            "data": [
+                                {
+                                    "assessment": "optimal",
+                                    "sec": 1,
+                                    "value": 0,
+                                    "variation": 0
+                                },
+                                {
+                                    "assessment": "optimal",
+                                    "sec": 2,
+                                    "value": 0,
+                                    "variation": 0
+                                },
+                                {
+                                    "assessment": "optimal",
+                                    "sec": 3,
+                                    "value": 0,
+                                    "variation": 0
+                                },
+                                {
+                                    "assessment": "high",
+                                    "sec": 4,
+                                    "value": 96.9,
+                                    "variation": 1
+                                },
+                                {
+                                    "assessment": "high",
+                                    "sec": 5,
+                                    "value": 100,
+                                    "variation": 1
+                                },
+                                {
+                                    "assessment": "optimal",
+                                    "sec": 6,
+                                    "value": 94.4,
+                                    "variation": -1
+                                },
+                                {
+                                    "assessment": "optimal",
+                                    "sec": 7,
+                                    "value": 117.7,
+                                    "variation": 1
+                                },
+                                {
+                                    "assessment": "optimal",
+                                    "sec": 8,
+                                    "value": 89.6,
+                                    "variation": -1
+                                },
+                                {
+                                    "assessment": "optimal",
+                                    "sec": 9,
+                                    "value": 104.6,
+                                    "variation": 1
+                                },
+                                {
+                                    "assessment": "optimal",
+                                    "sec": 10,
+                                    "value": 94.8,
+                                    "variation": -1
+                                },
+                                {
+                                    "assessment": "optimal",
+                                    "sec": 11,
+                                    "value": 95.9,
+                                    "variation": 1
+                                },
+                                {
+                                    "assessment": "optimal",
+                                    "sec": 12,
+                                    "value": 91.5,
+                                    "variation": -1
+                                },
+                                {
+                                    "assessment": "low",
+                                    "sec": 13,
+                                    "value": 87.9,
+                                    "variation": -1
+                                },
+                                {
+                                    "assessment": "optimal",
+                                    "sec": 14,
+                                    "value": 88.9,
+                                    "variation": 1
+                                },
+                                {
+                                    "assessment": "high",
+                                    "sec": 15,
+                                    "value": 90.1,
+                                    "variation": 1
+                                },
+                                {
+                                    "assessment": "high",
+                                    "sec": 16,
+                                    "value": 108.6,
+                                    "variation": 1
+                                },
+                                {
+                                    "assessment": "optimal",
+                                    "sec": 17,
+                                    "value": 99.5,
+                                    "variation": -1
+                                },
+                                {
+                                    "assessment": "low",
+                                    "sec": 18,
+                                    "value": 92.7,
+                                    "variation": -1
+                                },
+                                {
+                                    "assessment": "optimal",
+                                    "sec": 19,
+                                    "value": 106.2,
+                                    "variation": 1
+                                },
+                                {
+                                    "assessment": "optimal",
+                                    "sec": 20,
+                                    "value": 90.8,
+                                    "variation": -1
+                                },
+                                {
+                                    "assessment": "optimal",
+                                    "sec": 21,
+                                    "value": 102,
+                                    "variation": 1
+                                },
+                                {
+                                    "assessment": "optimal",
+                                    "sec": 22,
+                                    "value": 0,
+                                    "variation": -1
+                                },
+                                {
+                                    "assessment": "optimal",
+                                    "sec": 23,
+                                    "value": 93.7,
+                                    "variation": 1
+                                },
+                                {
+                                    "assessment": "high",
+                                    "sec": 24,
+                                    "value": 97.2,
+                                    "variation": 1
+                                },
+                                {
+                                    "assessment": "optimal",
+                                    "sec": 25,
+                                    "value": 95.3,
+                                    "variation": -1
+                                },
+                                {
+                                    "assessment": "low",
+                                    "sec": 26,
+                                    "value": 0,
+                                    "variation": -1
+                                },
+                                {
+                                    "assessment": "optimal",
+                                    "sec": 27,
+                                    "value": 98,
+                                    "variation": 1
+                                },
+                                {
+                                    "assessment": "high",
+                                    "sec": 28,
+                                    "value": 103.3,
+                                    "variation": 1
+                                },
+                                {
+                                    "assessment": "optimal",
+                                    "sec": 29,
+                                    "value": 96,
+                                    "variation": -1
+                                }
+                            ]
+                        },
+                        "audio_gcs_uri": "gs://edy-pratt-audio/439872f9-860b-4772-974e-2159c4fa2ad7.wav",
+                        "enterprise_id": "2d0938d4-a0e9-4877-b408-f9b67020a825",
+                        "power": {
+                            "assessment": "low",
+                            "inference": {
+                                "result": {
+                                    "message": "Your volume during the presentation was low most of the time.",
+                                    "average_power": 43
+                                },
+                                "message": "Your volume was <35 dBA for 100% of the times, 35-65 dBA for 0% of the times and > 65 dBA for 0% of the times. \r\nKeep trying to deliver your speech at an optimum volume! Your average volume during the recording was at the rate of 43.0 dBA. It appears that your voice is coming from a distance, or you may be speaking quite softly. You might come across as whispering and speaking more softly with more minor variations for the human ear to respond. You can get better by practicing and then recording your presentation to see if optimum variation in the volume ranges from soft to loud for a more exciting voice. Try modulating it by considering factors like the room or audience size. \r\nModulate your speech based on the emotional appeal that you are trying to convey through your presentation."
+                            },
+                            "data": [
+                                {
+                                    "value": 43.11372221848005,
+                                    "millisec": 0
+                                }
+                            ]
+                        },
+                        "user_id": "2d0938d4-a0e9-4877-b408-f9b67020a825",
+                        "speech_rate": {
+                            "assessment": "low",
+                            "timestamp_graph_data": [],
+                            "measured": {
+                                "average": 118,
+                                "min": 60,
+                                "max": 204
+                            },
+                            "inference": {
+                                "assessment": "low",
+                                "low": 120,
+                                "average": 118,
+                                "message": {
+                                    "result": "You speak a bit slow based on the video. ",
+                                    "inference": "Your average pace was 118 words per minute.The ideal pace is 120-150 words per minute in a professional conversation. Without adequate variation in pace, your conversation can appear to be monotonous.  ",
+                                    "recommendation": "Keep going! Continue practicing how to vary your pace throughout the conversation. Varying your pace makes the content more interesting for the listeners and adds emotion to the content. "
+                                },
+                                "min": 60,
+                                "high": 150,
+                                "max": 204
+                            },
+                            "recommended": {
+                                "average": 120,
+                                "min": 120,
+                                "max": 150
+                            },
+                            "defination": "count of words per unit interval"
+                        },
+                        "EdyGrammar": "grammarCheck",
+                        "praat_output": {
+                            "average_pause_length": {
+                                "definition": "pause_duration / pause_count",
+                                "data": {
+                                    "measured": {
+                                        "average": 2.929666666666668,
+                                        "min": 2.929666666666668,
+                                        "max": 2.929666666666668
+                                    },
+                                    "inference": {
+                                        "assessment": "optimal",
+                                        "low": -9,
+                                        "average": 2.929666666666668,
+                                        "count": 2.929666666666668,
+                                        "message": "",
+                                        "min": 2.929666666666668,
+                                        "high": 9,
+                                        "max": 2.929666666666668
+                                    },
+                                    "recommended": {
+                                        "average": -9,
+                                        "min": -9,
+                                        "max": 9
+                                    }
+                                }
+                            },
+                            "pauses_count_sentence": {
+                                "definition": "Sentence pauses are >0.5 sec",
+                                "data": {
+                                    "measured": {
+                                        "average": 3,
+                                        "min": 3,
+                                        "max": 3
+                                    },
+                                    "inference": {
+                                        "assessment": "low",
+                                        "low": 10,
+                                        "average": 3,
+                                        "count": 3,
+                                        "message": "",
+                                        "min": 3,
+                                        "high": 12,
+                                        "max": 3
+                                    },
+                                    "recommended": {
+                                        "average": 10,
+                                        "min": 10,
+                                        "max": 12
+                                    }
+                                }
+                            },
+                            "assessment": "low",
+                            "articulation_rate": {
+                                "definition": "syllable_count / speaking_duration",
+                                "data": {
+                                    "measured": {
+                                        "average": 298.7044145873322,
+                                        "min": 298.7044145873322,
+                                        "max": 298.7044145873322
+                                    },
+                                    "inference": {
+                                        "assessment": "optimal",
+                                        "low": 250,
+                                        "average": 298.7044145873322,
+                                        "count": 298.7044145873322,
+                                        "message": "",
+                                        "min": 298.7044145873322,
+                                        "high": 320,
+                                        "max": 298.7044145873322
+                                    },
+                                    "recommended": {
+                                        "average": 250,
+                                        "min": 250,
+                                        "max": 320
+                                    }
+                                }
+                            },
+                            "pauses_count_strategic": {
+                                "definition": "Strategic pauses are >2 sec",
+                                "data": {
+                                    "measured": {
+                                        "average": 2,
+                                        "min": 2,
+                                        "max": 2
+                                    },
+                                    "inference": {
+                                        "assessment": "optimal",
+                                        "low": 1,
+                                        "average": 2,
+                                        "count": 2,
+                                        "message": "",
+                                        "min": 2,
+                                        "high": 2,
+                                        "max": 2
+                                    },
+                                    "recommended": {
+                                        "average": 1,
+                                        "min": 1,
+                                        "max": 2
+                                    }
+                                }
+                            },
+                            "pauses_count_sensory": {
+                                "definition": "Sensory pauses are >0.3 sec",
+                                "data": {
+                                    "measured": {
+                                        "average": 3,
+                                        "min": 3,
+                                        "max": 3
+                                    },
+                                    "inference": {
+                                        "assessment": "low",
+                                        "low": 15,
+                                        "average": 3,
+                                        "count": 3,
+                                        "message": "",
+                                        "min": 3,
+                                        "high": 20,
+                                        "max": 3
+                                    },
+                                    "recommended": {
+                                        "average": 15,
+                                        "min": 15,
+                                        "max": 20
+                                    }
+                                }
+                            },
+                            "phonation_time": {
+                                "definition": "total speech time",
+                                "data": {
+                                    "measured": {
+                                        "average": 0.2778666666666665,
+                                        "min": 0.2778666666666665,
+                                        "max": 0.2778666666666665
+                                    },
+                                    "inference": {
+                                        "assessment": "optimal",
+                                        "low": 0,
+                                        "average": 0.2778666666666665,
+                                        "count": 0.2778666666666665,
+                                        "message": "",
+                                        "min": 0.2778666666666665,
+                                        "high": 7,
+                                        "max": 0.2778666666666665
+                                    },
+                                    "recommended": {
+                                        "average": 0,
+                                        "min": 0,
+                                        "max": 7
+                                    }
+                                }
+                            },
+                            "speech_rate_syllables": {
+                                "definition": "syllable_count / total_duration",
+                                "data": {
+                                    "measured": {
+                                        "average": 145.4014598540146,
+                                        "min": 145.4014598540146,
+                                        "max": 145.4014598540146
+                                    },
+                                    "inference": {
+                                        "assessment": "low",
+                                        "low": 170,
+                                        "average": 145.4014598540146,
+                                        "count": 145.4014598540146,
+                                        "message": "",
+                                        "min": 145.4014598540146,
+                                        "high": 220,
+                                        "max": 145.4014598540146
+                                    },
+                                    "recommended": {
+                                        "average": 170,
+                                        "min": 170,
+                                        "max": 220
+                                    }
+                                }
+                            },
+                            "pauses_count_per_min": {
+                                "definition": "pauses_count_per_min",
+                                "data": {
+                                    "measured": {
+                                        "average": 6,
+                                        "min": 6,
+                                        "max": 6
+                                    },
+                                    "inference": {
+                                        "assessment": "optimal",
+                                        "low": -9,
+                                        "average": 6,
+                                        "count": 6,
+                                        "message": "",
+                                        "min": 6,
+                                        "high": 9,
+                                        "max": 6
+                                    },
+                                    "recommended": {
+                                        "average": -9,
+                                        "min": -9,
+                                        "max": 9
+                                    }
+                                }
+                            },
+                            "pauses_count_long": {
+                                "definition": "Long pauses are >3.5 sec",
+                                "data": {
+                                    "measured": {
+                                        "average": 0,
+                                        "min": 0,
+                                        "max": 0
+                                    },
+                                    "inference": {
+                                        "assessment": "optimal",
+                                        "low": 0,
+                                        "average": 0,
+                                        "count": 0,
+                                        "message": "",
+                                        "min": 0,
+                                        "high": 0,
+                                        "max": 0
+                                    },
+                                    "recommended": {
+                                        "average": 0,
+                                        "min": 0,
+                                        "max": 0
+                                    }
+                                }
+                            },
+                            "gender": {
+                                "definition": "gender",
+                                "data": {
+                                    "measured": {
+                                        "average": 0,
+                                        "min": 0,
+                                        "max": 0
+                                    },
+                                    "inference": {
+                                        "assessment": "optimal",
+                                        "low": 0,
+                                        "average": 0,
+                                        "count": 0,
+                                        "message": "",
+                                        "min": 0,
+                                        "high": 1,
+                                        "max": 0
+                                    },
+                                    "recommended": {
+                                        "average": 0,
+                                        "min": 0,
+                                        "max": 1
+                                    }
+                                }
+                            },
+                            "inference": {
+                                "assessment": "low",
+                                "definition": {
+                                    "pauses_count_sentence": "Sentence pauses are >0.5 sec",
+                                    "pauses_count_long": "Long pauses are >3.5 sec",
+                                    "pauses_count_transition": "Transition pauses are >1 sec.",
+                                    "pauses_count_strategic": "Strategic pauses are >2 sec",
+                                    "pauses_count_sensory": "Sensory pauses are >0.3 sec"
+                                },
+                                "result": "You have taken 11 pause(s) in your 34 second(s) video recording.",
+                                "message": "It's great that you have not taken any long pauses because they might indicate that you are hesitant or unfamiliar with your content. ",
+                                "total_pauses": 11,
+                                "recommendation": "To be a confident and effective speaker, you can use short pauses depending on the content or topic you are speaking on and the audience you are addressing.  In addition, you can use some pauses to create an appropriate impression or convey an emotional appeal depending on the content you are presenting. \r\nYou can consider using strategic (1-2 pauses if required), transition (2-3 pauses), sentence (10-12 pauses), and sensory (15-20 pauses) pauses. Using no pauses or fewer pauses indicates anxiety, less confidence, and impulsive behavior."
+                            },
+                            "pauses_count_transition": {
+                                "definition": "Transition pauses are >1 sec.",
+                                "data": {
+                                    "measured": {
+                                        "average": 3,
+                                        "min": 3,
+                                        "max": 3
+                                    },
+                                    "inference": {
+                                        "assessment": "optimal",
+                                        "low": 2,
+                                        "average": 3,
+                                        "count": 3,
+                                        "message": "",
+                                        "min": 3,
+                                        "high": 3,
+                                        "max": 3
+                                    },
+                                    "recommended": {
+                                        "average": 2,
+                                        "min": 2,
+                                        "max": 3
+                                    }
+                                }
+                            }
+                        },
+                        "power_db": {
+                            "assessment": "optimal",
+                            "inference": {
+                                "result": {
+                                    "message": "Your volume during the presentation was within the optimal range most of the time.",
+                                    "average_power": 66.07739381553694
+                                },
+                                "message": "Your volume was <50 dB for 14% of the times, 50-90 dB for 86% of the times and > 90 dB for 0% of the times. You varied your volume in this recording. Change from soft to loud or loud to soft volume to emphasize the key thoughts during the presentation and create the desired attention. Also, while modulating your volume, be mindful of the size of the room and audience. Continue modulating your volume based on the emotional appeal that you are trying to convey through your presentation."
+                            },
+                            "data": [
+                                {
+                                    "assessment": "optimal",
+                                    "value": 61.51941242724401,
+                                    "millisec": 5000,
+                                    "rounded_val": 62
+                                },
+                                {
+                                    "assessment": "optimal",
+                                    "value": 67.30879885016424,
+                                    "millisec": 10000,
+                                    "rounded_val": 67
+                                },
+                                {
+                                    "assessment": "optimal",
+                                    "value": 67.41076651479656,
+                                    "millisec": 15000,
+                                    "rounded_val": 67
+                                },
+                                {
+                                    "assessment": "optimal",
+                                    "value": 67.42810074752168,
+                                    "millisec": 20000,
+                                    "rounded_val": 67
+                                },
+                                {
+                                    "assessment": "optimal",
+                                    "value": 66.86883795126806,
+                                    "millisec": 25000,
+                                    "rounded_val": 67
+                                },
+                                {
+                                    "assessment": "optimal",
+                                    "value": 67.00675370395324,
+                                    "millisec": 30000,
+                                    "rounded_val": 67
+                                },
+                                {
+                                    "assessment": "low",
+                                    "value": 20.356261614203355,
+                                    "millisec": 35000,
+                                    "rounded_val": 20
+                                }
+                            ]
+                        },
+                        "behavioral_questions": [
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Result Focused",
+                                "skill": "Ownership and accountability",
+                                "question": "I do exactly what is asked.",
+                                "question_type": "Positive Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 5
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Self Awareness & Self Management",
+                                "skill": "Self-confidence",
+                                "question": "I take control of situations.",
+                                "question_type": "Positive Scale",
+                                "leadership_pre_selected": false,
+                                "answer": 9
+                            },
+                            {
+                                "dimension": "Interpersonal Effectiveness",
+                                "focus_area": "Business Environment Awareness",
+                                "skill": "Vision Alignment",
+                                "question": "I respect authority in all situations.",
+                                "question_type": "Positive Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 4
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Self Awareness & Self Management",
+                                "skill": "Self-confidence",
+                                "question": "I think through the consequences of my actions.",
+                                "question_type": "Positive Scale",
+                                "leadership_pre_selected": false,
+                                "answer": 7
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Result Focused",
+                                "skill": "Grit and persistence",
+                                "question": "I never regret my actions.",
+                                "question_type": "Positive Scale",
+                                "leadership_pre_selected": false,
+                                "answer": 4
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Agility/ Entrepreneurial Mindset",
+                                "skill": "Energy, passion and optimism",
+                                "question": "I begin to panic when there is a risk.",
+                                "question_type": "Negative Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 3
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Result Focused",
+                                "skill": "Project management",
+                                "question": "I can easily manipulate others.",
+                                "question_type": "Negative Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 3
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Result Focused",
+                                "skill": "Ownership and accountability",
+                                "question": "I am cautious when dealing with others.",
+                                "question_type": "Negative Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 7
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Communication",
+                                "skill": "Synthesizing messages",
+                                "question": "I cheer up people easily.",
+                                "question_type": "Positive Scale",
+                                "leadership_pre_selected": false,
+                                "answer": 5
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Result Focused",
+                                "skill": "Ownership and accountability",
+                                "question": "I trust others' intentions.",
+                                "question_type": "Positive Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 9
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Agility/ Entrepreneurial Mindset",
+                                "skill": "Adaptability",
+                                "question": "I do not like when people contradict my beliefs.",
+                                "question_type": "Negative Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 3
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Communication",
+                                "skill": "Synthesizing messages",
+                                "question": "I do not understanding why people react in certain situations.",
+                                "question_type": "Negative Scale",
+                                "leadership_pre_selected": false,
+                                "answer": 3
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Agility/ Entrepreneurial Mindset",
+                                "skill": "Adaptability",
+                                "question": "I want everything to be done my way.",
+                                "question_type": "Negative Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 6
+                            },
+                            {
+                                "dimension": "Interpersonal Effectiveness",
+                                "focus_area": "Developing relationships",
+                                "skill": "Instilling Trust",
+                                "question": "I am concerned about others.",
+                                "question_type": "Positive Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 8
+                            },
+                            {
+                                "dimension": "Interpersonal Effectiveness",
+                                "focus_area": "Business Environment Awareness",
+                                "skill": "Vision Alignment",
+                                "question": "I prefer competition over collaboration.",
+                                "question_type": "Negative Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 3
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Self Awareness & Self Management",
+                                "skill": "Understanding one's strengths",
+                                "question": "I am confident of my skills.",
+                                "question_type": "Positive Scale",
+                                "leadership_pre_selected": false,
+                                "answer": 8
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Self Awareness & Self Management",
+                                "skill": "Understanding one's emotions",
+                                "question": "I find it difficult to express my enthusiasm to others.",
+                                "question_type": "Negative Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 2
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Self Awareness & Self Management",
+                                "skill": "Understanding one's emotions",
+                                "question": "I try to avoid dealing with emotional people.",
+                                "question_type": "Negative Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 3
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Result Focused",
+                                "skill": "Project management",
+                                "question": "I candidly share my thoughts.",
+                                "question_type": "Positive Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 6
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Self Awareness & Self Management",
+                                "skill": "Understanding one's emotions",
+                                "question": "I do not get overwhelmed by situations.",
+                                "question_type": "Positive Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 8
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Self Awareness & Self Management",
+                                "skill": "Purpose-driven",
+                                "question": "I want everything to be \"just right\".",
+                                "question_type": "Positive Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 5
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Result Focused",
+                                "skill": "Ownership and accountability",
+                                "question": "I modify rules to my convenience.",
+                                "question_type": "Negative Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 6
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Agility/ Entrepreneurial Mindset",
+                                "skill": "Courage and risk-taking",
+                                "question": "I get bored while working on routine tasks.",
+                                "question_type": "Positive Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 10
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Communication",
+                                "skill": "Storytelling",
+                                "question": "I often initiate conversations.",
+                                "question_type": "Positive Scale",
+                                "leadership_pre_selected": false,
+                                "answer": 9
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Agility/ Entrepreneurial Mindset",
+                                "skill": "Adaptability",
+                                "question": "I respect others' beliefs and values.",
+                                "question_type": "Positive Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 10
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Self Awareness & Self Management",
+                                "skill": "Purpose-driven",
+                                "question": "I am often not clear about my approach.",
+                                "question_type": "Negative Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 2
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Result Focused",
+                                "skill": "Grit and persistence",
+                                "question": "I need instant gratification.",
+                                "question_type": "Negative Scale",
+                                "leadership_pre_selected": false,
+                                "answer": 3
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Self Awareness & Self Management",
+                                "skill": "Resilience",
+                                "question": "I get upset when faced with difficulties.",
+                                "question_type": "Negative Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 1
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Agility/ Entrepreneurial Mindset",
+                                "skill": "Driving change and innovation",
+                                "question": "I always have new ideas.",
+                                "question_type": "Negative Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 8
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Self Awareness & Self Management",
+                                "skill": "Self-motivation",
+                                "question": "I focus only on the basics when completing a task.",
+                                "question_type": "Negative Scale",
+                                "leadership_pre_selected": false,
+                                "answer": 3
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Agility/ Entrepreneurial Mindset",
+                                "skill": "Adaptability",
+                                "question": "I enjoy working on diverse projects.",
+                                "question_type": "Positive Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 9
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Self Awareness & Self Management",
+                                "skill": "Understanding one's emotions",
+                                "question": "I regularly need re-assurance on my work.",
+                                "question_type": "Negative Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 5
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Agility/ Entrepreneurial Mindset",
+                                "skill": "Learnability",
+                                "question": "I prefer tried and tested approach.",
+                                "question_type": "Negative Scale",
+                                "leadership_pre_selected": false,
+                                "answer": 3
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Self Awareness & Self Management",
+                                "skill": "Understanding one's emotions",
+                                "question": "I often feel nervous without a reason.",
+                                "question_type": "Negative Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 1
+                            },
+                            {
+                                "dimension": "Interpersonal Effectiveness",
+                                "focus_area": "Developing relationships",
+                                "skill": "Collaboration Skills",
+                                "question": "I support others when they need emotional help.",
+                                "question_type": "Positive Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 9
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Agility/ Entrepreneurial Mindset",
+                                "skill": "Courage and risk-taking",
+                                "question": "I enjoy challenging tasks.",
+                                "question_type": "Positive Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 10
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Agility/ Entrepreneurial Mindset",
+                                "skill": "Energy, passion and optimism",
+                                "question": "I am hopeful even when the situation is not favourable.",
+                                "question_type": "Positive Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 10
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Self Awareness & Self Management",
+                                "skill": "Understanding one's strengths",
+                                "question": "I take time to deal with new situations.",
+                                "question_type": "Negative Scale",
+                                "leadership_pre_selected": false,
+                                "answer": 4
+                            },
+                            {
+                                "dimension": "Interpersonal Effectiveness",
+                                "focus_area": "Developing relationships",
+                                "skill": "Instilling Trust",
+                                "question": "I have no time for others.",
+                                "question_type": "Negative Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 3
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Agility/ Entrepreneurial Mindset",
+                                "skill": "Courage and risk-taking",
+                                "question": "I do not have much energy by the end of the day.",
+                                "question_type": "Negative Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 2
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Communication",
+                                "skill": "Storytelling",
+                                "question": "I enjoy my own company.",
+                                "question_type": "Negative Scale",
+                                "leadership_pre_selected": false,
+                                "answer": 6
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Self Awareness & Self Management",
+                                "skill": "Understanding one's emotions",
+                                "question": "I openly express my happiness.",
+                                "question_type": "Positive Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 7
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Self Awareness & Self Management",
+                                "skill": "Understanding one's emotions",
+                                "question": "I am aware of my feelings.",
+                                "question_type": "Positive Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 8
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Self Awareness & Self Management",
+                                "skill": "Self-directedness",
+                                "question": "I get distracted easily.",
+                                "question_type": "Negative Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 6
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Agility/ Entrepreneurial Mindset",
+                                "skill": "Driving change and innovation",
+                                "question": "I am comfortable doing routine tasks.",
+                                "question_type": "Positive Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 2
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Self Awareness & Self Management",
+                                "skill": "Self-directedness",
+                                "question": "I am always focused on my work.",
+                                "question_type": "Positive Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 6
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Self Awareness & Self Management",
+                                "skill": "Self-motivation",
+                                "question": "I set high standards for myself and others.",
+                                "question_type": "Positive Scale",
+                                "leadership_pre_selected": false,
+                                "answer": 10
+                            },
+                            {
+                                "dimension": "Interpersonal Effectiveness",
+                                "focus_area": "Developing relationships",
+                                "skill": "Collaboration Skills",
+                                "question": "I do not get affected by sob stories.",
+                                "question_type": "Negative Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 3
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Self Awareness & Self Management",
+                                "skill": "Self-confidence",
+                                "question": "I wait for others to lead the way.",
+                                "question_type": "Negative Scale",
+                                "leadership_pre_selected": false,
+                                "answer": 1
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Self Awareness & Self Management",
+                                "skill": "Understanding one's emotions",
+                                "question": "I do not get embarrased easily.",
+                                "question_type": "Positive Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 9
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Agility/ Entrepreneurial Mindset",
+                                "skill": "Learnability",
+                                "question": "I explore alternatives to solve problems.",
+                                "question_type": "Positive Scale",
+                                "leadership_pre_selected": false,
+                                "answer": 9
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Agility/ Entrepreneurial Mindset",
+                                "skill": "Courage and risk-taking",
+                                "question": "I avoid taking risks unless I am sure.",
+                                "question_type": "Negative Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 3
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Self Awareness & Self Management",
+                                "skill": "Resilience",
+                                "question": "I can bounce back from any situation.",
+                                "question_type": "Positive Scale",
+                                "leadership_pre_selected": true,
+                                "answer": 8
+                            },
+                            {
+                                "dimension": "Self-Leadership",
+                                "focus_area": "Self Awareness & Self Management",
+                                "skill": "Self-confidence",
+                                "question": "I act quickly without thinking too much.",
+                                "question_type": "Negative Scale",
+                                "leadership_pre_selected": false,
+                                "answer": 5
+                            }
+                        ],
+                        "recruiter_skills": {
+                            "Understanding one's emotions": 8.1,
+                            "Self-directedness": 6.5,
+                            "Self-control and regulation": 9,
+                            "Resilience": 8.5,
+                            "Purpose-driven": 7.2,
+                            "Time management and prioritization": 5.2,
+                            "Project management": 8,
+                            "Planning": 7.6,
+                            "Ownership and accountability": 6.2,
+                            "Attention to detail": 6,
+                            "Speaking with conviction": 7.2,
+                            "Strategic Thinking": 7.1,
+                            "Exploring perspectives and alternatives": 7.8,
+                            "Critical Thinking": 7.8,
+                            "Big Picture Thinking": 7.5,
+                            "Unconventional approach (breaking stereotypes and barriers)": 8.1,
+                            "Energy, passion and optimism": 8.5,
+                            "Driving change and innovation": 7,
+                            "Dealing with uncertainty": 8.3,
+                            "Courage and risk-taking": 9.2,
+                            "Adaptability": 8.4,
+                            "Role Modeling": 7.2,
+                            "Motivating and inspiring others": 7.2,
+                            "Empowering others": 7.6,
+                            "Developing others": 8.4,
+                            "Coaching": 7.1,
+                            "Promoting a culture of respect": 7.8,
+                            "Fostering inclusiveness": 7.4,
+                            "Openness to feedback": 7.2,
+                            "Instilling Trust": 7.2,
+                            "Empathetic": 7.2,
+                            "Collaboration Skills": 7.5,
+                            "Vision Alignment": 6.8,
+                            "Organizational awareness": 8,
+                            "Contextualization of knowledge": 7.3
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}
